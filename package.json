@@ -1,11 +1,18 @@
 {
+  "$schema": "./node_modules/ng-packagr/package.schema.json",
+  "name": "@webcobra/structures",
   "version": "0.0.7",
   "license": "MIT",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/public-api.ts"
+    }
+  },
   "scripts": {
     "test": "jest",
     "build": "ng-packagr -p package.json"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@angular/common": "^9.0.6",
     "@angular/platform-browser": "^9.0.6",
     "@angular/core": "^9.0.6",

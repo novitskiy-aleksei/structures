@@ -1,5 +1,4 @@
 {
-  "extends": "../../../tsconfig.json",
   "esModuleInterop": true,
   "compilerOptions": {
     "outDir": "../out-tsc/spec",

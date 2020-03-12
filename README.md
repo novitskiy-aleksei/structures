@@ -1,3 +1,6 @@
+![Node.js CI](https://github.com/novitskiy-aleksei/structures/workflows/Node.js%20CI/badge.svg?branch=master)
+
+
 # Structures
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
