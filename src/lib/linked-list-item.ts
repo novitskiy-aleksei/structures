@@ -1,9 +1,14 @@
 import { LinkedListValue } from './linked-list-value';
-import { LoadRequest } from './chain-load-request';
+import { LoadRequest } from './load-request';
 import { RetrieveDirection } from './retrieve-direction';
 
-export abstract class LinkedListItem<K, T extends LinkedListValue<K>, V> {
-  id: K;
+/**
+ *
+ *
+ * @public
+ */
+export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<ListId>> {
+  id: ListId;
   created: number;
   nextId: string;
   prevId: string;
@@ -11,14 +16,14 @@ export abstract class LinkedListItem<K, T extends LinkedListValue<K>, V> {
   protected _nextId: string;
   // tslint:disable-next-line:variable-name
   protected _prevId: string;
-  prev: LinkedListItem<K, T, V>;
-  next: LinkedListItem<K, T, V>;
-  value: T;
+  prev: LinkedListItem<ListId, ListValue>;
+  next: LinkedListItem<ListId, ListValue>;
+  value: ListValue;
 
   constructor(
-    value: T,
-    prev: LinkedListItem<K, T, V> = null,
-    next: LinkedListItem<K, T, V> = null
+    value: ListValue,
+    prev: LinkedListItem<ListId, ListValue> = null,
+    next: LinkedListItem<ListId, ListValue> = null
   ) {
     if (value) {
       this.id = value.id;

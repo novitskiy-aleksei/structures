@@ -1,16 +1,19 @@
 import { LinkedListItem } from './linked-list-item';
 import { LinkedListValue } from './linked-list-value';
 
-export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T extends LinkedListValue<K>> {
+export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> {
 
-  protected readonly hashTable = new Map<K, V>();
-  public head: LinkedListItem<K, T, V>;
-  public tail: LinkedListItem<K, T, V>;
+  protected readonly hashTable = new Map<ListId, ListItem>();
+  public head: LinkedListItem<ListId, ListValue>;
+  public tail: LinkedListItem<ListId, ListValue>;
   protected length: number;
 
-  protected constructor(...values: T[]) {}
+  constructor(items: ListItem[]) {
+    this.clear();
+    items.map(elem => this.append(elem.value.id, elem));
+  }
 
-  *iterator(): IterableIterator<LinkedListItem<K, T, V>> {
+  *iterator(): IterableIterator<LinkedListItem<ListId, ListValue>> {
     let currentItem = this.tail;
 
     while (currentItem) {
@@ -23,11 +26,11 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
     return this.iterator();
   }
 
-  getHead(): T {
+  getHead(): ListValue {
     return this.head ? this.head.value : null;
   }
 
-  getTail(): T {
+  getTail(): ListValue {
     return this.tail ? this.tail.value : null;
   }
 
@@ -39,11 +42,11 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
     return !!this.length;
   }
 
-  getBy(key: K): V | undefined {
+  getBy(key: ListId): ListItem | undefined {
     return this.hashTable.get(key);
   }
 
-  protected insertNextTo(key: K, newItem: V, previousKey: K): V {
+  protected insertNextTo(key: ListId, newItem: ListItem, previousKey: ListId): ListItem {
 
     if (this.isOld(newItem)) {
       return null;
@@ -76,7 +79,7 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
   /**
    * @mutable newItemIn
    */
-  protected insertPrevTo(key: K, newItemIn: V, nextKey: K): V {
+  protected insertPrevTo(key: ListId, newItemIn: ListItem, nextKey: ListId): ListItem {
 
     if (this.isOld(newItemIn)) {
       return null;
@@ -106,7 +109,7 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
   }
 
   // Adds the element at the end of the linked list
-  append(key: K, newItem: V): K {
+  append(key: ListId, newItem: ListItem): ListId {
 
     if (this.isOld(newItem)) {
       return null;
@@ -127,7 +130,7 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
   }
 
   // Add the element at the beginning of the linked list
-  prepend(key: K, newItem: V): K {
+  prepend(key: ListId, newItem: ListItem): ListId {
 
     if (this.isOld(newItem)) {
       return null;
@@ -148,7 +151,7 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
     return key;
   }
 
-  remove(key: K): T {
+  remove(key: ListId): ListValue {
 
     const currentItem = this.hashTable.get(key);
 
@@ -172,7 +175,7 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
     return currentItem.value;
   }
 
-  removeHead(): T {
+  removeHead(): ListValue {
 
     const currentItem = this.head;
 
@@ -198,7 +201,7 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
     return currentItem.value;
   }
 
-  removeTail(): T {
+  removeTail(): ListValue {
     const currentItem = this.tail;
 
     // empty list
@@ -223,11 +226,18 @@ export abstract class DoublyLinkedList<K, V extends LinkedListItem<K, T, V>, T e
     return currentItem.value;
   }
 
-  toArray(): IterableIterator<LinkedListItem<K, T, V>> {
+  toArray(): IterableIterator<LinkedListItem<ListId, ListValue>> {
     return this.iterator();
   }
 
-  protected isOld(item: V): boolean {
+  clear() {
+    this.length = 0;
+    this.tail = null;
+    this.head = null;
+    this.hashTable.clear();
+  }
+
+  protected isOld(item: ListItem): boolean {
     const exist = this.hashTable.get(item.value.id);
 
     return exist ? exist.value.created >= item.value.created : false;
