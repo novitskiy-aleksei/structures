@@ -8,5 +8,10 @@ module.exports = {
     '^.+\\.(ts|js|html)$': 'ts-jest',
   },
   snapshotSerializers: [
-  ]
+  ],
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.spec.json'
+    }
+  }
 };

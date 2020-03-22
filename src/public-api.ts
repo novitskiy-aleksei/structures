@@ -1,8 +1,7 @@
 /*
  * Public API Surface of structures
  */
-export * from './lib/behavior-subject-map';
-export * from './lib/chain-load-request';
+export * from './lib/load-request';
 export * from './lib/doubly-linked-list';
 export * from './lib/linked-list-item';
 export * from './lib/linked-list-value';
