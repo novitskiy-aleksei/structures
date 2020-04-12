@@ -1,5 +1,5 @@
 /**
- * Data unit to use in linked list
+ * Linked list basic value
  *
  * @param id - Unique item identifier across list
  * @param created - (optional) Timestamp to determine freshness of item

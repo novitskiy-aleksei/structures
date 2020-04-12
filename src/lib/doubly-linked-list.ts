@@ -1,6 +1,9 @@
 import { LinkedListItem } from './linked-list-item';
 import { LinkedListValue } from './linked-list-value';
 
+/**
+ * @public
+ */
 export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> {
 
   protected readonly hashTable = new Map<ListId, ListItem>();
@@ -76,9 +79,6 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     }
   }
 
-  /**
-   * @mutable newItemIn
-   */
   protected insertPrevTo(key: ListId, newItemIn: ListItem, nextKey: ListId): ListItem {
 
     if (this.isOld(newItemIn)) {

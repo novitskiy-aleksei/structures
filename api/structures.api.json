@@ -1,0 +1,1585 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.7.8",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
+  },
+  "kind": "Package",
+  "canonicalReference": "@webcobra/structures!",
+  "docComment": "",
+  "name": "@webcobra/structures",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@webcobra/structures!",
+      "name": "",
+      "members": [
+        {
+          "kind": "Class",
+          "canonicalReference": "@webcobra/structures!DoublyLinkedList:class",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class DoublyLinkedList<ListId, ListItem extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListItem",
+              "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<ListId, ListValue>"
+            },
+            {
+              "kind": "Content",
+              "text": ", ListValue extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListValue",
+              "canonicalReference": "@webcobra/structures!LinkedListValue:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<ListId>"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "ListId",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "ListItem",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "ListValue",
+              "constraintTokenRange": {
+                "startIndex": 4,
+                "endIndex": 6
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "DoublyLinkedList",
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#[Symbol.iterator]:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Symbol.iterator",
+                  "canonicalReference": "!SymbolConstructor#iterator"
+                },
+                {
+                  "kind": "Content",
+                  "text": "](): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IterableIterator",
+                  "canonicalReference": "!IterableIterator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "[Symbol.iterator]"
+            },
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `DoublyLinkedList` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(items: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "items",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#append:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "append(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", newItem: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "append"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#clear:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "clear(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "clear"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#getBy:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getBy(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "getBy"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#getHead:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getHead(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "getHead"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#getLength:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getLength(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "getLength"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#getTail:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getTail(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "getTail"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#hashTable:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected readonly hashTable: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Map",
+                  "canonicalReference": "!Map:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListItem>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "hashTable",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#head:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "head: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "head",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#insertNextTo:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected insertNextTo(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", newItem: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", previousKey: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                },
+                {
+                  "parameterName": "previousKey",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  }
+                }
+              ],
+              "name": "insertNextTo"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#insertPrevTo:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected insertPrevTo(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", newItemIn: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", nextKey: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "newItemIn",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                },
+                {
+                  "parameterName": "nextKey",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  }
+                }
+              ],
+              "name": "insertPrevTo"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#isEmpty:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "isEmpty(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "isEmpty"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#isOld:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected isOld(item: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "item",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "isOld"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#iterator:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "iterator(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IterableIterator",
+                  "canonicalReference": "!IterableIterator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "iterator"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#length:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected length: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "length",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#prepend:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "prepend(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", newItem: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "prepend"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#remove:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "remove(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "remove"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#removeHead:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "removeHead(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "removeHead"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#removeTail:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "removeTail(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "removeTail"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#tail:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tail: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "tail",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#toArray:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "toArray(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IterableIterator",
+                  "canonicalReference": "!IterableIterator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "toArray"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@webcobra/structures!LinkedListItem:class",
+          "docComment": "/**\n * Wraps linked list item with various information about siblings\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class LinkedListItem<ListId, ListValue extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListValue",
+              "canonicalReference": "@webcobra/structures!LinkedListValue:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<ListId>"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "ListId",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "ListValue",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "LinkedListItem",
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@webcobra/structures!LinkedListItem:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `LinkedListItem` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", prev?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", next?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "prev",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  }
+                },
+                {
+                  "parameterName": "next",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 8
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#clone:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "clone(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "clone"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#created:member",
+              "docComment": "/**\n * Item creation timestamp to compare freshness during update\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "created: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "created",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#getLoadInfo:member(1)",
+              "docComment": "/**\n * Get loading metadata - loading direction and edge item id\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getLoadInfo(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LoadMetadata",
+                  "canonicalReference": "@webcobra/structures!LoadMetadata:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "getLoadInfo"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#headDistance:member(1)",
+              "docComment": "/**\n * Calculates element amount left to list begin\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "headDistance(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "headDistance"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#id:member",
+              "docComment": "/**\n * Item identifier\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#log:member(1)",
+              "docComment": "/**\n * Make string representation of this item for debugging purposes\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "log(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "log"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#markAsBegin:member(1)",
+              "docComment": "/**\n * Marks this element as global list begin\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "markAsBegin(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "markAsBegin"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#markAsEnd:member(1)",
+              "docComment": "/**\n * Marks this element as global list ending\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "markAsEnd(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "markAsEnd"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#needLoad:member(1)",
+              "docComment": "/**\n * Determines if this element has siblings which require loading\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "needLoad(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "needLoad"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#next:member",
+              "docComment": "/**\n * Pointer to next list item\n *\n * null - no loaded next items undefined - this item is list last element, no loading required\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "next: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue> | null | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "next",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#prev:member",
+              "docComment": "/**\n * Pointer to previous list item\n *\n * null - no loaded previous items undefined - this item is list starting element\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "prev: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LinkedListItem",
+                  "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ListId, ListValue> | null | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "prev",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#value:member",
+              "docComment": "/**\n * Original list item value which was wrapped\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "value",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@webcobra/structures!LinkedListValue:interface",
+          "docComment": "/**\n * Linked list basic value\n *\n * @param id - Unique item identifier across list\n *\n * @param created - (optional) Timestamp to determine freshness of item\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface LinkedListValue<ListId> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "ListId",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "LinkedListValue",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!LinkedListValue#created:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "created?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "created",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!LinkedListValue#id:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@webcobra/structures!RetrieveDirection:enum",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum RetrieveDirection "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "RetrieveDirection",
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@webcobra/structures!RetrieveDirection.down:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "down = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "down",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@webcobra/structures!RetrieveDirection.up:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "up = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "up",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

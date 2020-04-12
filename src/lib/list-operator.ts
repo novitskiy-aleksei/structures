@@ -1,4 +1,6 @@
-
+/**
+ * @alpha
+ */
 export abstract class ListOperator<T> {
   protected list: T[];
 

@@ -3,9 +3,9 @@
 
 # Structures
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli)
 
-## Code scaffolding
+## BehaviorSubjectMap
 
 Run `ng generate component component-name --project structures` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project structures`.
 > Note: Don't forget to add `--project structures` or else it will be added to the default project in your `angular.json` file. 

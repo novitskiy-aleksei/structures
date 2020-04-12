@@ -1,23 +1,42 @@
 import { LinkedListValue } from './linked-list-value';
-import { LoadRequest } from './load-request';
+import { LoadMetadata } from './load-metadata';
 import { RetrieveDirection } from './retrieve-direction';
 
 /**
- *
+ * Wraps linked list item with various information about siblings
  *
  * @public
  */
 export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<ListId>> {
+  /**
+   * Item identifier
+   */
   id: ListId;
+
+  /**
+   * Item creation timestamp to compare freshness during update
+   */
   created: number;
-  nextId: string;
-  prevId: string;
-  // tslint:disable-next-line:variable-name
-  protected _nextId: string;
-  // tslint:disable-next-line:variable-name
-  protected _prevId: string;
-  prev: LinkedListItem<ListId, ListValue>;
-  next: LinkedListItem<ListId, ListValue>;
+
+  /**
+   * Pointer to previous list item
+   *
+   * null - no loaded previous items
+   * undefined - this item is list starting element
+   */
+  prev: LinkedListItem<ListId, ListValue> | null | undefined;
+
+  /**
+   * Pointer to next list item
+   *
+   * null - no loaded next items
+   * undefined - this item is list last element, no loading required
+   */
+  next: LinkedListItem<ListId, ListValue> | null | undefined;
+
+  /**
+   * Original list item value which was wrapped
+   */
   value: ListValue;
 
   constructor(
@@ -40,19 +59,31 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
     this.next = undefined;
   }
 
+  /**
+   * Marks this element as global list begin
+   */
   markAsBegin() {
     this.prev = undefined;
   }
 
+  /**
+   * Calculates element amount left to list begin
+   */
   headDistance(): number {
     return this.prev ? 1 + this.prev.headDistance() : 0;
   }
 
+  /**
+   * Determines if this element has siblings which require loading
+   */
   needLoad(): boolean {
     return this.next === null || this.prev === null;
   }
 
-  getLoadInfo(): Partial<LoadRequest> {
+  /**
+   * Get loading metadata - loading direction and edge item id
+   */
+  getLoadInfo(): Partial<LoadMetadata> {
     if (!this.prev) {
       return {direction: RetrieveDirection.down, from: this.value.id};
     }
@@ -61,6 +92,9 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
     }
   }
 
+  /**
+   * Make string representation of this item for debugging purposes
+   */
   log(): string {
     const p = this.prev ? this.prev.value.id : '-';
     const n = this.next ? this.next.value.id : '-';
