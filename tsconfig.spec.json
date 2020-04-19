@@ -9,5 +9,8 @@
     "**/*.spec.ts",
     "src/tests/**/*.ts",
     "**/*.d.ts"
+  ],
+  "exclude": [
+    "src/tests/performance/**"
   ]
 }
