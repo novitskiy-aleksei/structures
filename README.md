@@ -1,27 +1,32 @@
 ![Node.js CI](https://github.com/novitskiy-aleksei/structures/workflows/Node.js%20CI/badge.svg?branch=master)
-
+![npm-publish](https://github.com/novitskiy-aleksei/structures/workflows/npm-publish/badge.svg)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/67c2fa1d46d2de9c8ba3/test_coverage)](https://codeclimate.com/github/novitskiy-aleksei/structures/test_coverage)
 
 # Structures
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli)
+Efficient, clear, well tested and documented TypeScript data structures
 
-## BehaviorSubjectMap
+- [Documentation root](/docs/structures.md)
+- [Performance tests](/src/tests/performance)
 
-Run `ng generate component component-name --project structures` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project structures`.
-> Note: Don't forget to add `--project structures` or else it will be added to the default project in your `angular.json` file. 
+## Installation
 
-## Build
+Run `npm i @webcobra/structures` or `yarn add @webcobra/structures` for yarn users
+> Note: You can always directly use compiled files <todo:link>
 
-Run `ng build structures` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Publishing
+Please, check individual structure for usage notes/examples
 
-After building your library with `ng build structures`, go to the dist folder `cd dist/structures` and run `npm publish`.
+- [Doubly linked list](/docs/structures.doublylinkedlist.md)
 
-## Running unit tests
+## Contributing, running tests and local checkout
 
-Run `ng test structures` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Pull sources, then install dependencies:
+`yarn install`
 
-## Further help
+Run unit tests:
+`yarn test`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Build library and generate docs + changesets:
+`yarn build`

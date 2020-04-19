@@ -1,6 +1,6 @@
-import { DoublyLinkedList } from '../lib/doubly-linked-list';
-import { LinkedListItem } from '../lib/linked-list-item';
-import { LinkedListValue } from '../lib/linked-list-value';
+import { DoublyLinkedList } from '../../lib/doubly-linked-list';
+import { LinkedListItem } from '../../lib/linked-list-item';
+import { LinkedListValue } from '../../lib/linked-list-value';
 
 describe('Doubly linked list performance tests', () => {
 
