@@ -2,26 +2,55 @@ import { LinkedListItem } from './linked-list-item';
 import { LinkedListValue } from './linked-list-value';
 
 /**
+ * Doubly linked list
+ *
+ * Uses ES2015 Map for storing items which is more efficient in manipulating
+ * list items instead array especially on large amount of nodes.
+ * Contains helper functions for inserting, checking, etc
+ *
+ * todo: usage
+ *
  * @public
  */
 export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> {
 
-  protected readonly hashTable = new Map<ListId, ListItem>();
+  /**
+   * First item in a linked list, has no items after it (no prev)
+   */
   public head: LinkedListItem<ListId, ListValue>;
+  /**
+   * Last item in a linked list, has no items before it (no next)
+   */
   public tail: LinkedListItem<ListId, ListValue>;
-  protected length: number;
 
+  /**
+   * Indicates amount of items in list, usually must be equal to map length
+   */
+  protected _length: number;
+  /**
+   * Store for list items
+   *
+   * Here used a Map with custom iterator (@see this.*iterator()) instead of usual array
+   * cause Map works faster in most operations which required to manipulate linked list.
+   * Even iteration in for loop with 'downlevelIteration' flag in most environments works
+   * equal or faster. (@see performance tests)
+   */
+  protected readonly hashTable = new Map<ListId, ListItem>();
+
+  /**
+   * Initialize list with items array, first array item becomes a head
+   */
   constructor(items: ListItem[]) {
     this.clear();
     items.map(elem => this.append(elem.value.id, elem));
   }
 
   *iterator(): IterableIterator<LinkedListItem<ListId, ListValue>> {
-    let currentItem = this.tail;
+    let currentItem = this.head;
 
     while (currentItem) {
       yield currentItem;
-      currentItem = currentItem.prev;
+      currentItem = currentItem.next;
     }
   }
 
@@ -29,27 +58,28 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     return this.iterator();
   }
 
-  getHead(): ListValue {
-    return this.head ? this.head.value : null;
+  /**
+   * Get the amount of items in list
+   */
+  get length(): number {
+    return this._length;
   }
 
-  getTail(): ListValue {
-    return this.tail ? this.tail.value : null;
-  }
-
-  getLength(): number {
-    return this.length;
-  }
-
+  /**
+   * Indicate that list has no items
+   */
   isEmpty(): boolean {
     return !!this.length;
   }
 
+  /**
+   * Retrieve item by provided key
+   */
   getBy(key: ListId): ListItem | undefined {
     return this.hashTable.get(key);
   }
 
-  protected insertNextTo(key: ListId, newItem: ListItem, previousKey: ListId): ListItem {
+  insertNextTo(key: ListId, newItem: ListItem, previousKey: ListId): ListItem {
 
     if (this.isOld(newItem)) {
       return null;
@@ -73,13 +103,13 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
       }
 
       previousItem.next = newItem;
-      this.length++;
+      this._length++;
 
       return newItem;
     }
   }
 
-  protected insertPrevTo(key: ListId, newItemIn: ListItem, nextKey: ListId): ListItem {
+  insertPrevTo(key: ListId, newItemIn: ListItem, nextKey: ListId): ListItem {
 
     if (this.isOld(newItemIn)) {
       return null;
@@ -102,7 +132,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
       }
 
       nextItem.prev = newItem;
-      this.length++;
+      this._length++;
 
       return newItem;
     }
@@ -124,7 +154,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     }
 
     this.hashTable.set(key, newItem);
-    this.length++;
+    this._length++;
 
     return key;
   }
@@ -146,7 +176,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
       this.head = newItem;
     }
 
-    this.length++;
+    this._length++;
 
     return key;
   }
@@ -171,7 +201,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     currentItem.next = null;
     currentItem.prev = null;
     this.hashTable.delete(key);
-    this.length--;
+    this._length--;
     return currentItem.value;
   }
 
@@ -197,7 +227,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
 
     currentItem.next = currentItem.prev = null;
     this.hashTable.delete(currentItem.value.id);
-    this.length--;
+    this._length--;
     return currentItem.value;
   }
 
@@ -222,7 +252,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
 
     currentItem.next = currentItem.prev = null;
     this.hashTable.delete(currentItem.value.id);
-    this.length--;
+    this._length--;
     return currentItem.value;
   }
 
@@ -231,7 +261,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
   }
 
   clear() {
-    this.length = 0;
+    this._length = 0;
     this.tail = null;
     this.head = null;
     this.hashTable.clear();
