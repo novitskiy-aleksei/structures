@@ -12,13 +12,13 @@ export class TestListItem extends LinkedListItem<string, TestListValue> {
 
 export class TestListValue implements LinkedListValue<string> {
   id: string;
-  value: number;
+  testField: number;
 }
 
 export function generateList(length: number) {
   const arrayArray = new Array(length)
     .fill(0)
-    .map((_, i) => new TestListItem({id: String(i), value: i} as TestListValue))
+    .map((_, i) => new TestListItem({id: String(i), testField: i} as TestListValue))
   ;
 
   return new TestLinkedList(arrayArray);
