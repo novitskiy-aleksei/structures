@@ -4,6 +4,10 @@
 
 ## DoublyLinkedList.hashTable property
 
+Store for list items
+
+Here used a Map with custom iterator (<!-- -->@<!-- -->see this.\*iterator()) instead of usual array cause Map works faster in most operations which required to manipulate linked list. Even iteration in for loop with 'downlevelIteration' flag in most environments works equal or faster. (<!-- -->@<!-- -->see performance tests)
+
 <b>Signature:</b>
 
 ```typescript

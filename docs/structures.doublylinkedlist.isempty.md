@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.isEmpty() method
 
+Indicate that list has no items
+
 <b>Signature:</b>
 
 ```typescript

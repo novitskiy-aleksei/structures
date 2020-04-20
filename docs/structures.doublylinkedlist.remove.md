@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.remove() method
 
+Deletes item from linked list
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,7 +16,7 @@ remove(key: ListId): ListValue;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  key | <code>ListId</code> |  |
+|  key | <code>ListId</code> | identifier for seeking deletion item |
 
 <b>Returns:</b>
 

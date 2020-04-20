@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.\[Symbol.iterator\]() method
 
+Iterator shorthand for iterating list object just like it is a native array
+
 <b>Signature:</b>
 
 ```typescript

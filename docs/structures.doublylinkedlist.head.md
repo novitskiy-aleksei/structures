@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.head property
 
+First item in a linked list, has no items after it (no prev)
+
 <b>Signature:</b>
 
 ```typescript

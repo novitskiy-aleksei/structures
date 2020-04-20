@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.removeTail() method
 
+Deletes last item in a list
+
 <b>Signature:</b>
 
 ```typescript

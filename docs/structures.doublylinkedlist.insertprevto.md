@@ -4,19 +4,21 @@
 
 ## DoublyLinkedList.insertPrevTo() method
 
+Insert new item to the list at given position
+
 <b>Signature:</b>
 
 ```typescript
-protected insertPrevTo(key: ListId, newItemIn: ListItem, nextKey: ListId): ListItem;
+insertPrevTo(newKey: ListId, newItemIn: ListItem, position: ListId): ListItem;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  key | <code>ListId</code> |  |
-|  newItemIn | <code>ListItem</code> |  |
-|  nextKey | <code>ListId</code> |  |
+|  newKey | <code>ListId</code> | identifier used to store inserted item |
+|  newItemIn | <code>ListItem</code> | inserted item |
+|  position | <code>ListId</code> | id of existing element previous to which make insert |
 
 <b>Returns:</b>
 

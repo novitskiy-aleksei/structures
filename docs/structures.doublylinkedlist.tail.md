@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.tail property
 
+Last item in a linked list, has no items before it (no next)
+
 <b>Signature:</b>
 
 ```typescript

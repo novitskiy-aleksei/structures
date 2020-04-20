@@ -18,7 +18,7 @@
         {
           "kind": "Class",
           "canonicalReference": "@webcobra/structures!DoublyLinkedList:class",
-          "docComment": "/**\n * @public\n */\n",
+          "docComment": "/**\n * Doubly linked list\n *\n * Uses ES2015 Map for storing items which is more efficient in manipulating list items instead array especially on large amount of nodes. Contains helper functions for inserting, checking, etc\n *\n * todo: usage\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -90,9 +90,35 @@
           "name": "DoublyLinkedList",
           "members": [
             {
+              "kind": "Property",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#_length:member",
+              "docComment": "/**\n * Indicates amount of items in list, usually must be equal to map length\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected _length: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "_length",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false
+            },
+            {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#[Symbol.iterator]:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Iterator shorthand for iterating list object just like it is a native array\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -143,7 +169,7 @@
             {
               "kind": "Constructor",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList:constructor(1)",
-              "docComment": "/**\n * Constructs a new instance of the `DoublyLinkedList` class\n */\n",
+              "docComment": "/**\n * Initialize list with items array, first array item becomes a head\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -173,7 +199,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#append:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Adds the element at the end of the linked list\n *\n * @param key - a key which is used to store new item in list\n *\n * @param newItem - item for adding to the end of list\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -232,7 +258,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#clear:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Resets list\n *\n * Removes all items, sets length to zero, head&tail to null\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -260,7 +286,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#getBy:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Retrieve item by provided key\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -302,93 +328,9 @@
               "name": "getBy"
             },
             {
-              "kind": "Method",
-              "canonicalReference": "@webcobra/structures!DoublyLinkedList#getHead:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getHead(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "ListValue"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [],
-              "name": "getHead"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@webcobra/structures!DoublyLinkedList#getLength:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getLength(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [],
-              "name": "getLength"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@webcobra/structures!DoublyLinkedList#getTail:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getTail(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "ListValue"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [],
-              "name": "getTail"
-            },
-            {
               "kind": "Property",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#hashTable:member",
-              "docComment": "",
+              "docComment": "/**\n * Store for list items\n *\n * Here used a Map with custom iterator (@see this.*iterator()) instead of usual array cause Map works faster in most operations which required to manipulate linked list. Even iteration in for loop with 'downlevelIteration' flag in most environments works equal or faster. (@see performance tests)\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -419,7 +361,7 @@
             {
               "kind": "Property",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#head:member",
-              "docComment": "",
+              "docComment": "/**\n * First item in a linked list, has no items after it (no prev)\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -450,11 +392,11 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#insertNextTo:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Insert new item to the list at given position\n *\n * @param newKey - identifier used to store inserted item\n *\n * @param newItem - inserted item\n *\n * @param position - id of existing element next to which make insert\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected insertNextTo(key: "
+                  "text": "insertNextTo(newKey: "
                 },
                 {
                   "kind": "Content",
@@ -470,7 +412,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", previousKey: "
+                  "text": ", position: "
                 },
                 {
                   "kind": "Content",
@@ -498,7 +440,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "key",
+                  "parameterName": "newKey",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -512,7 +454,7 @@
                   }
                 },
                 {
-                  "parameterName": "previousKey",
+                  "parameterName": "position",
                   "parameterTypeTokenRange": {
                     "startIndex": 5,
                     "endIndex": 6
@@ -524,11 +466,11 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#insertPrevTo:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Insert new item to the list at given position\n *\n * @param newKey - identifier used to store inserted item\n *\n * @param newItemIn - inserted item\n *\n * @param position - id of existing element previous to which make insert\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected insertPrevTo(key: "
+                  "text": "insertPrevTo(newKey: "
                 },
                 {
                   "kind": "Content",
@@ -544,7 +486,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", nextKey: "
+                  "text": ", position: "
                 },
                 {
                   "kind": "Content",
@@ -572,7 +514,7 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "key",
+                  "parameterName": "newKey",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
@@ -586,7 +528,7 @@
                   }
                 },
                 {
-                  "parameterName": "nextKey",
+                  "parameterName": "position",
                   "parameterTypeTokenRange": {
                     "startIndex": 5,
                     "endIndex": 6
@@ -598,7 +540,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#isEmpty:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Indicate that list has no items\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -670,7 +612,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#iterator:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Generator for iterating through list like native array\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -712,11 +654,11 @@
             {
               "kind": "Property",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#length:member",
-              "docComment": "",
+              "docComment": "/**\n * Get the amount of items in list\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected length: "
+                  "text": "get length(): "
                 },
                 {
                   "kind": "Content",
@@ -738,7 +680,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#prepend:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Adds the element at the beginning of the linked list\n *\n * @param key - a key which is used to store new item in list\n *\n * @param newItem - item for adding to the beginning of list\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -797,7 +739,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#remove:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Deletes item from linked list\n *\n * @param key - identifier for seeking deletion item\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -841,7 +783,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#removeHead:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Deletes first item in a list\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -869,7 +811,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#removeTail:member(1)",
-              "docComment": "",
+              "docComment": "/**\n * Deletes last item in a list\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -897,7 +839,7 @@
             {
               "kind": "Property",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#tail:member",
-              "docComment": "",
+              "docComment": "/**\n * Last item in a linked list, has no items before it (no next)\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

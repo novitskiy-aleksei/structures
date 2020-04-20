@@ -45,6 +45,9 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     items.map(elem => this.append(elem.value.id, elem));
   }
 
+  /**
+   * Generator for iterating through list like native array
+   */
   *iterator(): IterableIterator<LinkedListItem<ListId, ListValue>> {
     let currentItem = this.head;
 
@@ -54,6 +57,9 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     }
   }
 
+  /**
+   * Iterator shorthand for iterating list object just like it is a native array
+   */
   [Symbol.iterator]() {
     return this.iterator();
   }
@@ -69,7 +75,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    * Indicate that list has no items
    */
   isEmpty(): boolean {
-    return !!this.length;
+    return !this.length;
   }
 
   /**
@@ -79,18 +85,25 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     return this.hashTable.get(key);
   }
 
-  insertNextTo(key: ListId, newItem: ListItem, previousKey: ListId): ListItem {
+  /**
+   * Insert new item to the list at given position
+   *
+   * @param newKey - identifier used to store inserted item
+   * @param newItem - inserted item
+   * @param position - id of existing element next to which make insert
+   */
+  insertNextTo(newKey: ListId, newItem: ListItem, position: ListId): ListItem {
 
     if (this.isOld(newItem)) {
       return null;
     }
 
-    this.hashTable.set(key, newItem);
+    this.hashTable.set(newKey, newItem);
 
-    const previousItem = this.hashTable.get(previousKey);
+    const previousItem = this.hashTable.get(position);
 
     if (!previousItem) {
-      console.warn(`Can't insert after item with id ${previousKey} `);
+      console.warn(`Can't insert after item with id ${position} `);
       return null;
     } else {
       newItem.prev = previousItem;
@@ -109,18 +122,25 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     }
   }
 
-  insertPrevTo(key: ListId, newItemIn: ListItem, nextKey: ListId): ListItem {
+  /**
+   * Insert new item to the list at given position
+   *
+   * @param newKey - identifier used to store inserted item
+   * @param newItemIn - inserted item
+   * @param position - id of existing element previous to which make insert
+   */
+  insertPrevTo(newKey: ListId, newItemIn: ListItem, position: ListId): ListItem {
 
     if (this.isOld(newItemIn)) {
       return null;
     }
 
-    this.hashTable.set(key, newItemIn);
-    const newItem = this.hashTable.get(key);
-    const nextItem = this.hashTable.get(nextKey);
+    this.hashTable.set(newKey, newItemIn);
+    const newItem = this.hashTable.get(newKey);
+    const nextItem = this.hashTable.get(position);
 
     if (!nextItem) {
-      throw new Error(`Item ${nextKey} not found to insert after`);
+      throw new Error(`Item ${position} not found to insert after`);
     } else {
       newItem.next = nextItem;
       newItem.prev = nextItem.prev;
@@ -138,7 +158,12 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     }
   }
 
-  // Adds the element at the end of the linked list
+  /**
+    * Adds the element at the end of the linked list
+   *
+   * @param key - a key which is used to store new item in list
+   * @param newItem - item for adding to the end of list
+   */
   append(key: ListId, newItem: ListItem): ListId {
 
     if (this.isOld(newItem)) {
@@ -159,7 +184,12 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     return key;
   }
 
-  // Add the element at the beginning of the linked list
+  /**
+   * Adds the element at the beginning of the linked list
+   *
+   * @param key - a key which is used to store new item in list
+   * @param newItem - item for adding to the beginning of list
+   */
   prepend(key: ListId, newItem: ListItem): ListId {
 
     if (this.isOld(newItem)) {
@@ -181,6 +211,11 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     return key;
   }
 
+  /**
+   * Deletes item from linked list
+   *
+   * @param key - identifier for seeking deletion item
+   */
   remove(key: ListId): ListValue {
 
     const currentItem = this.hashTable.get(key);
@@ -205,6 +240,9 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     return currentItem.value;
   }
 
+  /**
+   * Deletes first item in a list
+   */
   removeHead(): ListValue {
 
     const currentItem = this.head;
@@ -231,6 +269,9 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     return currentItem.value;
   }
 
+  /**
+   * Deletes last item in a list
+   */
   removeTail(): ListValue {
     const currentItem = this.tail;
 
@@ -260,6 +301,11 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     return this.iterator();
   }
 
+  /**
+   * Resets list
+   *
+   * Removes all items, sets length to zero, head&tail to null
+   */
   clear() {
     this._length = 0;
     this.tail = null;

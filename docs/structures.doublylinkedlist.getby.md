@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.getBy() method
 
+Retrieve item by provided key
+
 <b>Signature:</b>
 
 ```typescript

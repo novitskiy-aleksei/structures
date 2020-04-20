@@ -4,8 +4,10 @@
 
 ## DoublyLinkedList.length property
 
+Get the amount of items in list
+
 <b>Signature:</b>
 
 ```typescript
-protected length: number;
+get length(): number;
 ```

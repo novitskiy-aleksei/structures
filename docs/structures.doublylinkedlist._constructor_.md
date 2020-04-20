@@ -4,7 +4,7 @@
 
 ## DoublyLinkedList.(constructor)
 
-Constructs a new instance of the `DoublyLinkedList` class
+Initialize list with items array, first array item becomes a head
 
 <b>Signature:</b>
 

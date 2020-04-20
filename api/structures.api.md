@@ -4,48 +4,27 @@
 
 ```ts
 
-// @public (undocumented)
+// @public
 export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> {
-    // (undocumented)
     [Symbol.iterator](): IterableIterator<LinkedListItem<ListId, ListValue>>;
     constructor(items: ListItem[]);
-    // (undocumented)
     append(key: ListId, newItem: ListItem): ListId;
-    // (undocumented)
     clear(): void;
-    // (undocumented)
     getBy(key: ListId): ListItem | undefined;
-    // (undocumented)
-    getHead(): ListValue;
-    // (undocumented)
-    getLength(): number;
-    // (undocumented)
-    getTail(): ListValue;
-    // (undocumented)
     protected readonly hashTable: Map<ListId, ListItem>;
-    // (undocumented)
     head: LinkedListItem<ListId, ListValue>;
-    // (undocumented)
-    protected insertNextTo(key: ListId, newItem: ListItem, previousKey: ListId): ListItem;
-    // (undocumented)
-    protected insertPrevTo(key: ListId, newItemIn: ListItem, nextKey: ListId): ListItem;
-    // (undocumented)
+    insertNextTo(newKey: ListId, newItem: ListItem, position: ListId): ListItem;
+    insertPrevTo(newKey: ListId, newItemIn: ListItem, position: ListId): ListItem;
     isEmpty(): boolean;
     // (undocumented)
     protected isOld(item: ListItem): boolean;
-    // (undocumented)
     iterator(): IterableIterator<LinkedListItem<ListId, ListValue>>;
-    // (undocumented)
-    protected length: number;
-    // (undocumented)
+    get length(): number;
+    protected _length: number;
     prepend(key: ListId, newItem: ListItem): ListId;
-    // (undocumented)
     remove(key: ListId): ListValue;
-    // (undocumented)
     removeHead(): ListValue;
-    // (undocumented)
     removeTail(): ListValue;
-    // (undocumented)
     tail: LinkedListItem<ListId, ListValue>;
     // (undocumented)
     toArray(): IterableIterator<LinkedListItem<ListId, ListValue>>;

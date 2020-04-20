@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.removeHead() method
 
+Deletes first item in a list
+
 <b>Signature:</b>
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## DoublyLinkedList.iterator() method
 
+Generator for iterating through list like native array
+
 <b>Signature:</b>
 
 ```typescript

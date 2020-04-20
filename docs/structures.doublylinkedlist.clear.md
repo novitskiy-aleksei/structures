@@ -4,6 +4,10 @@
 
 ## DoublyLinkedList.clear() method
 
+Resets list
+
+Removes all items, sets length to zero, head&amp;tail to null
+
 <b>Signature:</b>
 
 ```typescript
