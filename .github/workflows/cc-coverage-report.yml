@@ -9,5 +9,5 @@ jobs:
       - name: Codeclimate coverage report
         uses: marsam/codeclimate-action@master
         with:
-          command: yarn jest --coverage --coverageReporters=lcov
+          command: jest --coverage --coverageReporters=lcov
           reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
