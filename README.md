@@ -1,6 +1,7 @@
 ![Node.js CI](https://github.com/novitskiy-aleksei/structures/workflows/Node.js%20CI/badge.svg?branch=master)
 ![npm-publish](https://github.com/novitskiy-aleksei/structures/workflows/npm-publish/badge.svg)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/67c2fa1d46d2de9c8ba3/test_coverage)](https://codeclimate.com/github/novitskiy-aleksei/structures/test_coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/a8844cbf3bba4a2a98ea7b08346ed9e0)](https://www.codacy.com/manual/mr.novik/structures?utm_source=github.com&utm_medium=referral&utm_content=novitskiy-aleksei/structures&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8844cbf3bba4a2a98ea7b08346ed9e0)](https://www.codacy.com/manual/mr.novik/structures?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=novitskiy-aleksei/structures&amp;utm_campaign=Badge_Grade)
 
 # Structures
 
