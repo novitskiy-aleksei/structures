@@ -9,5 +9,5 @@ jobs:
       - name: Codeclimate coverage report
         uses: marsam/codeclimate-action@master
         with:
-          command: npx jest --coverage --coverageReporters=lcov -c ../jest.config.js
+          command: npx jest --coverage --coverageReporters=lcov -c ./jest.config.js
           reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
