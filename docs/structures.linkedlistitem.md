@@ -22,7 +22,6 @@ export declare abstract class LinkedListItem<ListId, ListValue extends LinkedLis
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [created](./structures.linkedlistitem.created.md) |  | <code>number</code> | Item creation timestamp to compare freshness during update |
 |  [id](./structures.linkedlistitem.id.md) |  | <code>ListId</code> | Item identifier |
 |  [next](./structures.linkedlistitem.next.md) |  | <code>LinkedListItem&lt;ListId, ListValue&gt; &#124; null &#124; undefined</code> | Pointer to next list item<!-- -->null - no loaded next items undefined - this item is list last element, no loading required |
 |  [prev](./structures.linkedlistitem.prev.md) |  | <code>LinkedListItem&lt;ListId, ListValue&gt; &#124; null &#124; undefined</code> | Pointer to previous list item<!-- -->null - no loaded previous items undefined - this item is list starting element |

@@ -43,7 +43,6 @@ export declare abstract class DoublyLinkedList<ListId, ListItem extends LinkedLi
 |  [insertNextTo(newKey, newItem, position)](./structures.doublylinkedlist.insertnextto.md) |  | Insert new item to the list at given position |
 |  [insertPrevTo(newKey, newItemIn, position)](./structures.doublylinkedlist.insertprevto.md) |  | Insert new item to the list at given position |
 |  [isEmpty()](./structures.doublylinkedlist.isempty.md) |  | Indicate that list has no items |
-|  [isOld(item)](./structures.doublylinkedlist.isold.md) |  |  |
 |  [iterator()](./structures.doublylinkedlist.iterator.md) |  | Generator for iterating through list like native array |
 |  [prepend(key, newItem)](./structures.doublylinkedlist.prepend.md) |  | Adds the element at the beginning of the linked list |
 |  [remove(key)](./structures.doublylinkedlist.remove.md) |  | Deletes item from linked list |

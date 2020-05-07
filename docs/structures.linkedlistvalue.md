@@ -16,6 +16,5 @@ export interface LinkedListValue<ListId>
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [created](./structures.linkedlistvalue.created.md) | <code>number</code> |  |
 |  [id](./structures.linkedlistvalue.id.md) | <code>ListId</code> |  |
 

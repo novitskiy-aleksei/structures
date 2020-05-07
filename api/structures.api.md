@@ -16,8 +16,6 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     insertNextTo(newKey: ListId, newItem: ListItem, position: ListId): ListItem;
     insertPrevTo(newKey: ListId, newItemIn: ListItem, position: ListId): ListItem;
     isEmpty(): boolean;
-    // (undocumented)
-    protected isOld(item: ListItem): boolean;
     iterator(): IterableIterator<LinkedListItem<ListId, ListValue>>;
     get length(): number;
     protected _length: number;
@@ -35,7 +33,6 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
     constructor(value: ListValue, prev?: LinkedListItem<ListId, ListValue>, next?: LinkedListItem<ListId, ListValue>);
     // (undocumented)
     clone(): void;
-    created: number;
     // Warning: (ae-incompatible-release-tags) The symbol "getLoadInfo" is marked as @public, but its signature references "LoadMetadata" which is marked as @internal
     getLoadInfo(): Partial<LoadMetadata>;
     headDistance(): number;
@@ -51,8 +48,6 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
 
 // @public
 export interface LinkedListValue<ListId> {
-    // (undocumented)
-    created?: number;
     // (undocumented)
     id: ListId;
 }
