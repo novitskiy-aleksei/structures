@@ -1,6 +1,34 @@
-import { generateList, TestLinkedList, TestListItem, TestListValue } from './doubly-linked-list.factory';
+import { generateArray, generateList, TestLinkedList, TestListItem, TestListValue } from './doubly-linked-list.factory';
 
 describe('Doubly linked list', () => {
+
+  let iterationPassTest: {
+    list: TestLinkedList,
+    cast: number[],
+  };
+
+  afterEach(() => {
+    if (iterationPassTest?.list) {
+      iterationPassAsserting(iterationPassTest.list, iterationPassTest.cast);
+    }
+  });
+
+  function iterationPassAsserting(list: TestLinkedList, cast: number[]) {
+    expect(list.length).toBe(cast.length);
+
+    let item = iterationPassTest.list.head;
+
+    // head -> tail
+    for (let i = 0; !!item; item = item.next, i++) {
+      expect(item.value.testField).toBe(cast[i]);
+    }
+    // tail -> head
+    for (let i = list.length; !!item; item = item.next, i--) {
+      expect(item.value.testField).toBe(cast[i]);
+    }
+
+    iterationPassTest = null;
+  }
 
   it('should initialize with sample array', () => {
     const itemCount = 100;
@@ -12,6 +40,11 @@ describe('Doubly linked list', () => {
 
     expect(linkedList.length).toBe(itemCount);
     expect(linkedList.head.value).toEqual({id: '0', testField: 0});
+
+    iterationPassTest = {
+      cast: generateArray(itemCount),
+      list: linkedList,
+    }
   });
 
   it('should correct display list items length', () => {
@@ -55,6 +88,10 @@ describe('Doubly linked list', () => {
     list.removeHead();
 
     expect(list.head.value.testField).toBe(1);
+
+    const cast = generateArray(10);
+    cast.shift();
+    iterationPassTest = {cast, list};
   });
 
   it('should be able to remove tail item from list', () => {
@@ -64,6 +101,9 @@ describe('Doubly linked list', () => {
     list.removeTail();
 
     expect(list.tail.value.testField).toBe(8);
+    const cast = generateArray(10);
+    cast.pop();
+    iterationPassTest = {cast, list};
   });
 
   it('should be able to append item to the end of list', () => {
@@ -75,6 +115,11 @@ describe('Doubly linked list', () => {
     expect(list.length).toBe(11);
     expect(list.tail.value.testField).toBe(10);
     expect(list.tail.prev.value.testField).toBe(9);
+
+    iterationPassTest = {
+      cast: generateArray(11),
+      list,
+    };
   });
 
   it('should be able to prepend item in the beginning of list', () => {
@@ -86,6 +131,10 @@ describe('Doubly linked list', () => {
     expect(list.length).toBe(9);
     expect(list.head.value.testField).toBe(-1);
     expect(list.head.next.value.testField).toBe(0);
+
+    const cast = generateArray(8);
+    cast.unshift(-1);
+    iterationPassTest = {cast, list};
   });
 
   it('should be able to delete one item from list by its id', () => {
@@ -96,6 +145,10 @@ describe('Doubly linked list', () => {
     expect(list.getBy('5')).toBeUndefined();
     expect(list.getBy('4').next.value.testField).toBe(6);
     expect(list.length).toBe(7);
+
+    const cast = generateArray(8);
+    cast.splice(5, 1);
+    iterationPassTest = {cast, list};
   });
 
   it('must be able to insert new item after existing one', () => {
@@ -107,6 +160,10 @@ describe('Doubly linked list', () => {
     expect(list.getBy('inserted')).toBe(newItem);
     expect(list.getBy('8').prev).toBe(newItem);
     expect(list.length).toBe(11);
+
+    const cast = generateArray(10);
+    cast.splice(8, 0, 777);
+    iterationPassTest = {cast, list};
   });
 
   it('must be able to insert new item before existing one', () => {
@@ -118,5 +175,9 @@ describe('Doubly linked list', () => {
     expect(list.getBy('inserted')).toBe(newItem);
     expect(list.getBy('7').next).toBe(newItem);
     expect(list.length).toBe(12);
+
+    const cast = generateArray(11);
+    cast.splice(8, 0, 777);
+    iterationPassTest = {cast, list};
   });
 });

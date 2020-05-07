@@ -14,11 +14,6 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
   id: ListId;
 
   /**
-   * Item creation timestamp to compare freshness during update
-   */
-  created: number;
-
-  /**
    * Pointer to previous list item
    *
    * null - no loaded previous items

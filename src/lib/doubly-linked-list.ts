@@ -93,11 +93,6 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    * @param position - id of existing element next to which make insert
    */
   insertNextTo(newKey: ListId, newItem: ListItem, position: ListId): ListItem {
-
-    if (this.isOld(newItem)) {
-      return null;
-    }
-
     this.hashTable.set(newKey, newItem);
 
     const previousItem = this.hashTable.get(position);
@@ -130,11 +125,6 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    * @param position - id of existing element previous to which make insert
    */
   insertPrevTo(newKey: ListId, newItemIn: ListItem, position: ListId): ListItem {
-
-    if (this.isOld(newItemIn)) {
-      return null;
-    }
-
     this.hashTable.set(newKey, newItemIn);
     const newItem = this.hashTable.get(newKey);
     const nextItem = this.hashTable.get(position);
@@ -166,10 +156,6 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    */
   append(key: ListId, newItem: ListItem): ListId {
 
-    if (this.isOld(newItem)) {
-      return null;
-    }
-
     if (!this.tail) {
       this.head = this.tail = newItem;
     } else {
@@ -191,10 +177,6 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    * @param newItem - item for adding to the beginning of list
    */
   prepend(key: ListId, newItem: ListItem): ListId {
-
-    if (this.isOld(newItem)) {
-      return null;
-    }
 
     this.hashTable.set(key, newItem);
 
@@ -313,9 +295,4 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     this.hashTable.clear();
   }
 
-  protected isOld(item: ListItem): boolean {
-    const exist = this.hashTable.get(item.value.id);
-
-    return exist ? exist.value.created >= item.value.created : false;
-  }
 }

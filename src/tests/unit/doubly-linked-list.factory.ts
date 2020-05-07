@@ -23,3 +23,10 @@ export function generateList(length: number) {
 
   return new TestLinkedList(arrayArray);
 }
+
+export function generateArray(length: number) {
+  return new Array(length)
+    .fill(0)
+    .map((_, i) => i)
+  ;
+}
