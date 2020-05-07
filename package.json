@@ -15,6 +15,9 @@
     "generate-docs": "api-documenter markdown -i api -o docs",
     "postbuild": "yarn api-extract && yarn generate-docs"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@angular/common": "^9.0.6",
     "@angular/core": "^9.0.6",
