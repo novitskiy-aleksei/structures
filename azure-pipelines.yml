@@ -24,9 +24,9 @@ steps:
   displayName: 'build'
 
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
-    displayName: 'Install dependencies'
-    inputs:
-      Arguments: install --no-progress
+  displayName: 'Install dependencies'
+  inputs:
+    Arguments: install --no-progress
 
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
   displayName: 'Unit tests'
