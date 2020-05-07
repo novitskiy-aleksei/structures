@@ -1,5 +1,4 @@
 ![Node.js CI](https://github.com/novitskiy-aleksei/structures/workflows/Node.js%20CI/badge.svg?branch=master)
-![npm-publish](https://github.com/novitskiy-aleksei/structures/workflows/npm-publish/badge.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/a8844cbf3bba4a2a98ea7b08346ed9e0)](https://www.codacy.com/manual/mr.novik/structures?utm_source=github.com&utm_medium=referral&utm_content=novitskiy-aleksei/structures&utm_campaign=Badge_Coverage)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8844cbf3bba4a2a98ea7b08346ed9e0)](https://www.codacy.com/manual/mr.novik/structures?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=novitskiy-aleksei/structures&amp;utm_campaign=Badge_Grade)
 
