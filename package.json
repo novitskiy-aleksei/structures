@@ -14,7 +14,8 @@
     "generate-docs": "api-documenter markdown -i api -o docs",
     "postbuild": "yarn api-extract && yarn generate-docs",
     "test": "jest",
-    "coverage": "jest --ci --reporters=jest-junit --coverage --coverageReporters=cobertura"
+    "coverage": "jest --ci --reporters=jest-junit --coverage --coverageReporters=cobertura",
+    "lint": "eslint . --ext .js,.ts"
   },
   "publishConfig": {
     "access": "public"
@@ -35,6 +36,9 @@
     "@microsoft/api-extractor": "^7.7.8",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^6.8.0",
     "jest": "^25.0.0",
     "jest-junit": "^10.0.0",
     "jest-preset-angular": "^8.1.0",
