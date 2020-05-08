@@ -19,8 +19,7 @@ steps:
       yarn build
     displayName: 'Build'
   - script: |
-      cd dist
-      yarn pack
+      cd dist && yarn pack
     displayName: 'Package package'
 
   - task: CopyFiles@2
