@@ -37,3 +37,9 @@ steps:
   inputs:
     codeCoverageTool: Cobertura
     summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml
+
+- task: Yarn@1
+  inputs:
+    command: custom
+    customCommand: 'lint'
+  displayName: ESLint
