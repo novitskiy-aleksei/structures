@@ -23,29 +23,11 @@ steps:
     yarn build
   displayName: 'build'
 
-- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
-  displayName: 'Install dependencies'
-  inputs:
-    Arguments: install --no-progress
-
-- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
-  displayName: 'Unit tests'
-  inputs:
-    Arguments: 'test --ci --reporters=jest-junit --reporters=default --coverage --coverageReporters=cobertura'
-  continueOnError: true # Test failures should be published before failing the build
-
-- task: PublishTestResults@2
-  displayName: 'Publish Jest Unit Test Results'
-  inputs:
-    testResultsFiles: junit.xml
-    mergeTestResults: true
-    testRunTitle: 'Jest Unit Tests'
-    failTaskOnFailedTests: true
+- script: |
+    npm run coverage
+  displayName: 'collect coverage'
 
 - task: PublishCodeCoverageResults@1
-  displayName: 'Publish code coverage from Jest tests'
   inputs:
     codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
-    # reportDirectory: '$(System.DefaultWorkingDirectory)/coverage'
-    failIfCoverageEmpty: true
+    summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml

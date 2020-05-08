@@ -9,11 +9,12 @@
     }
   },
   "scripts": {
-    "test": "jest",
     "build": "ng-packagr -p package.json",
     "api-extract": "api-extractor run --local --verbose",
     "generate-docs": "api-documenter markdown -i api -o docs",
-    "postbuild": "yarn api-extract && yarn generate-docs"
+    "postbuild": "yarn api-extract && yarn generate-docs",
+    "test": "jest",
+    "coverage": "jest --ci --reporters=jest-junit --reporters=default --coverage --coverageReporters=cobertura"
   },
   "publishConfig": {
     "access": "public"
