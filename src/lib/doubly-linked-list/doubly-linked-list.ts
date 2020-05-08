@@ -30,10 +30,10 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
   /**
    * Store for list items
    *
-   * Here used a Map with custom iterator (@see this.*iterator()) instead of usual array
+   * Here used a Map with custom iterator (see this.*iterator()) instead of usual array
    * cause Map works faster in most operations which required to manipulate linked list.
    * Even iteration in for loop with 'downlevelIteration' flag in most environments works
-   * equal or faster. (@see performance tests)
+   * equal or faster. (see performance tests)
    */
   protected readonly hashTable = new Map<ListId, ListItem>();
 

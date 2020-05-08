@@ -330,7 +330,7 @@
             {
               "kind": "Property",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#hashTable:member",
-              "docComment": "/**\n * Store for list items\n *\n * Here used a Map with custom iterator (@see this.*iterator()) instead of usual array cause Map works faster in most operations which required to manipulate linked list. Even iteration in for loop with 'downlevelIteration' flag in most environments works equal or faster. (@see performance tests)\n */\n",
+              "docComment": "/**\n * Store for list items\n *\n * Here used a Map with custom iterator (see this.*iterator()) instead of usual array cause Map works faster in most operations which required to manipulate linked list. Even iteration in for loop with 'downlevelIteration' flag in most environments works equal or faster. (see performance tests)\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -990,76 +990,6 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@webcobra/structures!LinkedListItem#clone:member(1)",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "clone(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "void"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [],
-              "name": "clone"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@webcobra/structures!LinkedListItem#getLoadInfo:member(1)",
-              "docComment": "/**\n * Get loading metadata - loading direction and edge item id\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "getLoadInfo(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Partial",
-                  "canonicalReference": "!Partial:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "LoadMetadata",
-                  "canonicalReference": "@webcobra/structures!LoadMetadata:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 5
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [],
-              "name": "getLoadInfo"
-            },
-            {
-              "kind": "Method",
               "canonicalReference": "@webcobra/structures!LinkedListItem#headDistance:member(1)",
               "docComment": "/**\n * Calculates element amount left to list begin\n */\n",
               "excerptTokens": [
@@ -1195,34 +1125,6 @@
               "overloadIndex": 1,
               "parameters": [],
               "name": "markAsEnd"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@webcobra/structures!LinkedListItem#needLoad:member(1)",
-              "docComment": "/**\n * Determines if this element has siblings which require loading\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "needLoad(): "
-                },
-                {
-                  "kind": "Content",
-                  "text": "boolean"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [],
-              "name": "needLoad"
             },
             {
               "kind": "Property",
@@ -1368,63 +1270,6 @@
             }
           ],
           "extendsTokenRanges": []
-        },
-        {
-          "kind": "Enum",
-          "canonicalReference": "@webcobra/structures!RetrieveDirection:enum",
-          "docComment": "/**\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export declare enum RetrieveDirection "
-            }
-          ],
-          "releaseTag": "Public",
-          "name": "RetrieveDirection",
-          "members": [
-            {
-              "kind": "EnumMember",
-              "canonicalReference": "@webcobra/structures!RetrieveDirection.down:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "down = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "2"
-                }
-              ],
-              "releaseTag": "Public",
-              "name": "down",
-              "initializerTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "EnumMember",
-              "canonicalReference": "@webcobra/structures!RetrieveDirection.up:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "up = "
-                },
-                {
-                  "kind": "Content",
-                  "text": "1"
-                }
-              ],
-              "releaseTag": "Public",
-              "name": "up",
-              "initializerTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ]
         }
       ]
     }

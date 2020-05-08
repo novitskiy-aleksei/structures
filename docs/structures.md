@@ -11,12 +11,6 @@
 |  [DoublyLinkedList](./structures.doublylinkedlist.md) | Doubly linked list<!-- -->Uses ES2015 Map for storing items which is more efficient in manipulating list items instead array especially on large amount of nodes. Contains helper functions for inserting, checking, etc<!-- -->todo: usage |
 |  [LinkedListItem](./structures.linkedlistitem.md) | Wraps linked list item with various information about siblings |
 
-## Enumerations
-
-|  Enumeration | Description |
-|  --- | --- |
-|  [RetrieveDirection](./structures.retrievedirection.md) |  |
-
 ## Interfaces
 
 |  Interface | Description |

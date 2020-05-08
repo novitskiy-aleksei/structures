@@ -31,16 +31,11 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
 // @public
 export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<ListId>> {
     constructor(value: ListValue, prev?: LinkedListItem<ListId, ListValue>, next?: LinkedListItem<ListId, ListValue>);
-    // (undocumented)
-    clone(): void;
-    // Warning: (ae-incompatible-release-tags) The symbol "getLoadInfo" is marked as @public, but its signature references "LoadMetadata" which is marked as @internal
-    getLoadInfo(): Partial<LoadMetadata>;
     headDistance(): number;
     id: ListId;
     log(): string;
     markAsBegin(): void;
     markAsEnd(): void;
-    needLoad(): boolean;
     next: LinkedListItem<ListId, ListValue> | null | undefined;
     prev: LinkedListItem<ListId, ListValue> | null | undefined;
     value: ListValue;
@@ -65,24 +60,6 @@ export abstract class ListOperator<T> {
     protected list: T[];
     // (undocumented)
     updateItemWith(key: keyof T, value: T): boolean;
-}
-
-// Warning: (ae-internal-missing-underscore) The name "LoadMetadata" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export interface LoadMetadata {
-    count?: number;
-    direction: RetrieveDirection;
-    // (undocumented)
-    from: any;
-}
-
-// @public (undocumented)
-export enum RetrieveDirection {
-    // (undocumented)
-    down = 2,
-    // (undocumented)
-    up = 1
 }
 
 

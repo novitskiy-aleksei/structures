@@ -1,6 +1,4 @@
 import { LinkedListValue } from './linked-list-value';
-import { LoadMetadata } from './load-metadata';
-import { RetrieveDirection } from './retrieve-direction';
 
 /**
  * Wraps linked list item with various information about siblings
@@ -69,25 +67,6 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
   }
 
   /**
-   * Determines if this element has siblings which require loading
-   */
-  needLoad(): boolean {
-    return this.next === null || this.prev === null;
-  }
-
-  /**
-   * Get loading metadata - loading direction and edge item id
-   */
-  getLoadInfo(): Partial<LoadMetadata> {
-    if (!this.prev) {
-      return {direction: RetrieveDirection.down, from: this.value.id};
-    }
-    if (!this.next) {
-      return {direction: RetrieveDirection.up, from: this.value.id};
-    }
-  }
-
-  /**
    * Make string representation of this item for debugging purposes
    */
   log(): string {
@@ -96,13 +75,4 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
     return `${p} <-prev ${this.value.id} next -> ${n}`;
   }
 
-  clone(): void {
-    // throw new Error('Not implemented');
-    // console.log({...this.value});
-    // return new ChainElement(
-    //   // new Message({...this.value}),
-    //   // this.prev ? this.prev.clone() : this.prev,
-    //   // this.next ? this.next.clone() : this.next,
-    // );
-  }
 }

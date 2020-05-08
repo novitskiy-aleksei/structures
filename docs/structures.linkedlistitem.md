@@ -31,11 +31,8 @@ export declare abstract class LinkedListItem<ListId, ListValue extends LinkedLis
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [clone()](./structures.linkedlistitem.clone.md) |  |  |
-|  [getLoadInfo()](./structures.linkedlistitem.getloadinfo.md) |  | Get loading metadata - loading direction and edge item id |
 |  [headDistance()](./structures.linkedlistitem.headdistance.md) |  | Calculates element amount left to list begin |
 |  [log()](./structures.linkedlistitem.log.md) |  | Make string representation of this item for debugging purposes |
 |  [markAsBegin()](./structures.linkedlistitem.markasbegin.md) |  | Marks this element as global list begin |
 |  [markAsEnd()](./structures.linkedlistitem.markasend.md) |  | Marks this element as global list ending |
-|  [needLoad()](./structures.linkedlistitem.needload.md) |  | Determines if this element has siblings which require loading |
 
