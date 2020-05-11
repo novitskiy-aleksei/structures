@@ -49,6 +49,10 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
    * Marks this element as global list ending
    */
   markAsEnd() {
+    if (this.next) {
+      throw new Error(`Unable to mark [${this.id}] as list ending cause it is not last item\r\n` + this.log());
+    }
+
     this.next = undefined;
   }
 
@@ -56,6 +60,10 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
    * Marks this element as global list begin
    */
   markAsBegin() {
+    if (this.prev) {
+      throw new Error(`Unable to mark [${this.id}] as list beginning cause it is not last item\r\n` + this.log());
+    }
+
     this.prev = undefined;
   }
 
@@ -64,6 +72,13 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
    */
   headDistance(): number {
     return this.prev ? 1 + this.prev.headDistance() : 0;
+  }
+
+  /**
+   * Calculates element amount left to list ending
+   */
+  tailDistance(): number {
+    return this.next ? 1 + this.next.tailDistance() : 0;
   }
 
   /**

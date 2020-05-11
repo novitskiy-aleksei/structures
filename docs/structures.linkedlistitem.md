@@ -35,4 +35,5 @@ export declare abstract class LinkedListItem<ListId, ListValue extends LinkedLis
 |  [log()](./structures.linkedlistitem.log.md) |  | Make string representation of this item for debugging purposes |
 |  [markAsBegin()](./structures.linkedlistitem.markasbegin.md) |  | Marks this element as global list begin |
 |  [markAsEnd()](./structures.linkedlistitem.markasend.md) |  | Marks this element as global list ending |
+|  [tailDistance()](./structures.linkedlistitem.taildistance.md) |  | Calculates element amount left to list ending |
 

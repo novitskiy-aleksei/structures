@@ -38,6 +38,7 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
     markAsEnd(): void;
     next: LinkedListItem<ListId, ListValue> | null | undefined;
     prev: LinkedListItem<ListId, ListValue> | null | undefined;
+    tailDistance(): number;
     value: ListValue;
 }
 

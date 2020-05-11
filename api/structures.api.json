@@ -1189,6 +1189,34 @@
               "isStatic": false
             },
             {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#tailDistance:member(1)",
+              "docComment": "/**\n * Calculates element amount left to list ending\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tailDistance(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "tailDistance"
+            },
+            {
               "kind": "Property",
               "canonicalReference": "@webcobra/structures!LinkedListItem#value:member",
               "docComment": "/**\n * Original list item value which was wrapped\n */\n",
