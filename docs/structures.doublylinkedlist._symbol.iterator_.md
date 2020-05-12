@@ -9,9 +9,9 @@ Iterator shorthand for iterating list object just like it is a native array
 <b>Signature:</b>
 
 ```typescript
-[Symbol.iterator](): IterableIterator<LinkedListItem<ListId, ListValue>>;
+[Symbol.iterator](): IterableIterator<ListItem>;
 ```
 <b>Returns:</b>
 
-`IterableIterator<LinkedListItem<ListId, ListValue>>`
+`IterableIterator<ListItem>`
 

@@ -1,6 +1,6 @@
 import { generateList } from './doubly-linked-list.factory';
 
-describe('Doubly linked list', () => {
+describe('Doubly linked list item', () => {
 
   it('should be able to mark self as a global beginning of list', () => {
     const list = generateList(5);

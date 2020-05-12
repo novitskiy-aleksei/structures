@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "target": "es2015",

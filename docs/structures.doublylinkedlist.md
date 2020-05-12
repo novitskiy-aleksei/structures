@@ -28,23 +28,23 @@ export declare abstract class DoublyLinkedList<ListId, ListItem extends LinkedLi
 |  --- | --- | --- | --- |
 |  [\_length](./structures.doublylinkedlist._length.md) |  | <code>number</code> | Indicates amount of items in list, usually must be equal to map length |
 |  [hashTable](./structures.doublylinkedlist.hashtable.md) |  | <code>Map&lt;ListId, ListItem&gt;</code> | Store for list items<!-- -->Here used a Map with custom iterator (see this.\*iterator()) instead of usual array cause Map works faster in most operations which required to manipulate linked list. Even iteration in for loop with 'downlevelIteration' flag in most environments works equal or faster. (see performance tests) |
-|  [head](./structures.doublylinkedlist.head.md) |  | <code>LinkedListItem&lt;ListId, ListValue&gt;</code> | First item in a linked list, has no items after it (no prev) |
+|  [head](./structures.doublylinkedlist.head.md) |  | <code>ListItem</code> | First item in a linked list, has no items after it (no prev) |
 |  [length](./structures.doublylinkedlist.length.md) |  | <code>number</code> | Get the amount of items in list |
-|  [tail](./structures.doublylinkedlist.tail.md) |  | <code>LinkedListItem&lt;ListId, ListValue&gt;</code> | Last item in a linked list, has no items before it (no next) |
+|  [tail](./structures.doublylinkedlist.tail.md) |  | <code>ListItem</code> | Last item in a linked list, has no items before it (no next) |
 
 ## Methods
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
 |  [\[Symbol.iterator\]()](./structures.doublylinkedlist._symbol.iterator_.md) |  | Iterator shorthand for iterating list object just like it is a native array |
-|  [append(key, newItem)](./structures.doublylinkedlist.append.md) |  | Adds the element at the end of the linked list |
+|  [append(newItem)](./structures.doublylinkedlist.append.md) |  | Adds the element at the end of the linked list |
 |  [clear()](./structures.doublylinkedlist.clear.md) |  | Resets list<!-- -->Removes all items, sets length to zero, head&amp;tail to null |
 |  [getBy(key)](./structures.doublylinkedlist.getby.md) |  | Retrieve item by provided key |
-|  [insertNextTo(newKey, newItem, position)](./structures.doublylinkedlist.insertnextto.md) |  | Insert new item to the list at given position |
-|  [insertPrevTo(newKey, newItemIn, position)](./structures.doublylinkedlist.insertprevto.md) |  | Insert new item to the list at given position |
+|  [insertNextTo(position, newItem)](./structures.doublylinkedlist.insertnextto.md) |  | Insert new item to the list at given position |
+|  [insertPrevTo(position, newItem)](./structures.doublylinkedlist.insertprevto.md) |  | Insert new item to the list at given position |
 |  [isEmpty()](./structures.doublylinkedlist.isempty.md) |  | Indicate that list has no items |
 |  [iterator()](./structures.doublylinkedlist.iterator.md) |  | Generator for iterating through list like native array |
-|  [prepend(key, newItem)](./structures.doublylinkedlist.prepend.md) |  | Adds the element at the beginning of the linked list |
+|  [prepend(newItem)](./structures.doublylinkedlist.prepend.md) |  | Adds the element at the beginning of the linked list |
 |  [remove(key)](./structures.doublylinkedlist.remove.md) |  | Deletes item from linked list |
 |  [removeHead()](./structures.doublylinkedlist.removehead.md) |  | Deletes first item in a list |
 |  [removeTail()](./structures.doublylinkedlist.removetail.md) |  | Deletes last item in a list |

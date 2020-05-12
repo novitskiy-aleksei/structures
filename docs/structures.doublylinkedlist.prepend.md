@@ -9,17 +9,16 @@ Adds the element at the beginning of the linked list
 <b>Signature:</b>
 
 ```typescript
-prepend(key: ListId, newItem: ListItem): ListId;
+prepend(newItem: ListItem): this;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  key | <code>ListId</code> | a key which is used to store new item in list |
 |  newItem | <code>ListItem</code> | item for adding to the beginning of list |
 
 <b>Returns:</b>
 
-`ListId`
+`this`
 

@@ -9,7 +9,9 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
   /**
    * Item identifier
    */
-  id: ListId;
+  get id(): ListId {
+    return this.value?.id;
+  }
 
   /**
    * Pointer to previous list item
@@ -17,7 +19,7 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
    * null - no loaded previous items
    * undefined - this item is list starting element
    */
-  prev: LinkedListItem<ListId, ListValue> | null | undefined;
+  prev: this | null | undefined;
 
   /**
    * Pointer to next list item
@@ -25,22 +27,15 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
    * null - no loaded next items
    * undefined - this item is list last element, no loading required
    */
-  next: LinkedListItem<ListId, ListValue> | null | undefined;
+  next: this | null | undefined;
 
   /**
    * Original list item value which was wrapped
    */
   value: ListValue;
 
-  constructor(
-    value: ListValue,
-    prev: LinkedListItem<ListId, ListValue> = null,
-    next: LinkedListItem<ListId, ListValue> = null
-  ) {
-    if (value) {
-      this.id = value.id;
-      this.value = value;
-    }
+  constructor(value: ListValue, prev = null, next = null) {
+    this.value = value;
     this.next = next;
     this.prev = prev;
   }

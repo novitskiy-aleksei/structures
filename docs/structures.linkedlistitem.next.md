@@ -11,5 +11,5 @@ null - no loaded next items undefined - this item is list last element, no loadi
 <b>Signature:</b>
 
 ```typescript
-next: LinkedListItem<ListId, ListValue> | null | undefined;
+next: this | null | undefined;
 ```

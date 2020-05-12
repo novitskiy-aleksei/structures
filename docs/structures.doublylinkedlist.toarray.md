@@ -7,9 +7,9 @@
 <b>Signature:</b>
 
 ```typescript
-toArray(): IterableIterator<LinkedListItem<ListId, ListValue>>;
+toArray(): IterableIterator<ListItem>;
 ```
 <b>Returns:</b>
 
-`IterableIterator<LinkedListItem<ListId, ListValue>>`
+`IterableIterator<ListItem>`
 

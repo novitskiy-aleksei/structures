@@ -9,9 +9,9 @@ Generator for iterating through list like native array
 <b>Signature:</b>
 
 ```typescript
-iterator(): IterableIterator<LinkedListItem<ListId, ListValue>>;
+iterator(): IterableIterator<ListItem>;
 ```
 <b>Returns:</b>
 
-`IterableIterator<LinkedListItem<ListId, ListValue>>`
+`IterableIterator<ListItem>`
 

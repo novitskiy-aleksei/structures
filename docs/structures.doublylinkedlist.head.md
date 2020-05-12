@@ -9,5 +9,5 @@ First item in a linked list, has no items after it (no prev)
 <b>Signature:</b>
 
 ```typescript
-head: LinkedListItem<ListId, ListValue>;
+head: ListItem;
 ```

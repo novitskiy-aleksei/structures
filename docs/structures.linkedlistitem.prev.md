@@ -11,5 +11,5 @@ null - no loaded previous items undefined - this item is list starting element
 <b>Signature:</b>
 
 ```typescript
-prev: LinkedListItem<ListId, ListValue> | null | undefined;
+prev: this | null | undefined;
 ```

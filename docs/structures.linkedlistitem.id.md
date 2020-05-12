@@ -9,5 +9,5 @@ Item identifier
 <b>Signature:</b>
 
 ```typescript
-id: ListId;
+get id(): ListId;
 ```

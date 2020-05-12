@@ -110,7 +110,7 @@ describe('Doubly linked list', () => {
     const list  = generateList(10);
 
     expect(list.tail.value.testField).toBe(9);
-    list.append('10', new TestListItem({id: '10', testField: 10}));
+    list.append(new TestListItem({id: '10', testField: 10}));
 
     expect(list.length).toBe(11);
     expect(list.tail.value.testField).toBe(10);
@@ -126,7 +126,7 @@ describe('Doubly linked list', () => {
     const list  = generateList(8);
 
     expect(list.head.value.testField).toBe(0);
-    list.prepend('-1', new TestListItem({id: '-1', testField: -1}));
+    list.prepend(new TestListItem({id: '-1', testField: -1}));
 
     expect(list.length).toBe(9);
     expect(list.head.value.testField).toBe(-1);
@@ -155,7 +155,7 @@ describe('Doubly linked list', () => {
     const list  = generateList(10);
     const newItem = new TestListItem({id: 'inserted', testField: 777});
 
-    list.insertPrevTo(newItem.id, newItem, '8');
+    list.insertPrevTo('8', newItem);
 
     expect(list.getBy('inserted')).toBe(newItem);
     expect(list.getBy('8').prev).toBe(newItem);
@@ -170,7 +170,7 @@ describe('Doubly linked list', () => {
     const list  = generateList(11);
     const newItem = new TestListItem({id: 'inserted', testField: 777});
 
-    list.insertNextTo(newItem.id, newItem, '7');
+    list.insertNextTo('7', newItem);
 
     expect(list.getBy('inserted')).toBe(newItem);
     expect(list.getBy('7').next).toBe(newItem);

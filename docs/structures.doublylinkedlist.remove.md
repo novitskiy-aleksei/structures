@@ -9,7 +9,7 @@ Deletes item from linked list
 <b>Signature:</b>
 
 ```typescript
-remove(key: ListId): ListValue;
+remove(key: ListId): this;
 ```
 
 ## Parameters
@@ -20,5 +20,5 @@ remove(key: ListId): ListValue;
 
 <b>Returns:</b>
 
-`ListValue`
+`this`
 

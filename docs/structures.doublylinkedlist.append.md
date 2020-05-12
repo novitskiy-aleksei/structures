@@ -9,17 +9,16 @@ Adds the element at the end of the linked list
 <b>Signature:</b>
 
 ```typescript
-append(key: ListId, newItem: ListItem): ListId;
+append(newItem: ListItem): this;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  key | <code>ListId</code> | a key which is used to store new item in list |
 |  newItem | <code>ListItem</code> | item for adding to the end of list |
 
 <b>Returns:</b>
 
-`ListId`
+`this`
 

@@ -9,7 +9,7 @@ Constructs a new instance of the `LinkedListItem` class
 <b>Signature:</b>
 
 ```typescript
-constructor(value: ListValue, prev?: LinkedListItem<ListId, ListValue>, next?: LinkedListItem<ListId, ListValue>);
+constructor(value: ListValue, prev?: any, next?: any);
 ```
 
 ## Parameters
@@ -17,6 +17,6 @@ constructor(value: ListValue, prev?: LinkedListItem<ListId, ListValue>, next?: L
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  value | <code>ListValue</code> |  |
-|  prev | <code>LinkedListItem&lt;ListId, ListValue&gt;</code> |  |
-|  next | <code>LinkedListItem&lt;ListId, ListValue&gt;</code> |  |
+|  prev | <code>any</code> |  |
+|  next | <code>any</code> |  |
 

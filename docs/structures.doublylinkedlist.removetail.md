@@ -9,9 +9,9 @@ Deletes last item in a list
 <b>Signature:</b>
 
 ```typescript
-removeTail(): ListValue;
+removeTail(): this;
 ```
 <b>Returns:</b>
 
-`ListValue`
+`this`
 

@@ -9,9 +9,9 @@ Deletes first item in a list
 <b>Signature:</b>
 
 ```typescript
-removeHead(): ListValue;
+removeHead(): this;
 ```
 <b>Returns:</b>
 
-`ListValue`
+`this`
 

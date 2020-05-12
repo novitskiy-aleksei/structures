@@ -6,38 +6,38 @@
 
 // @public
 export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> {
-    [Symbol.iterator](): IterableIterator<LinkedListItem<ListId, ListValue>>;
+    [Symbol.iterator](): IterableIterator<ListItem>;
     constructor(items: ListItem[]);
-    append(key: ListId, newItem: ListItem): ListId;
+    append(newItem: ListItem): this;
     clear(): void;
     getBy(key: ListId): ListItem | undefined;
     protected readonly hashTable: Map<ListId, ListItem>;
-    head: LinkedListItem<ListId, ListValue>;
-    insertNextTo(newKey: ListId, newItem: ListItem, position: ListId): ListItem;
-    insertPrevTo(newKey: ListId, newItemIn: ListItem, position: ListId): ListItem;
+    head: ListItem;
+    insertNextTo(position: ListId, newItem: ListItem): this;
+    insertPrevTo(position: ListId, newItem: ListItem): this;
     isEmpty(): boolean;
-    iterator(): IterableIterator<LinkedListItem<ListId, ListValue>>;
+    iterator(): IterableIterator<ListItem>;
     get length(): number;
     protected _length: number;
-    prepend(key: ListId, newItem: ListItem): ListId;
-    remove(key: ListId): ListValue;
-    removeHead(): ListValue;
-    removeTail(): ListValue;
-    tail: LinkedListItem<ListId, ListValue>;
+    prepend(newItem: ListItem): this;
+    remove(key: ListId): this;
+    removeHead(): this;
+    removeTail(): this;
+    tail: ListItem;
     // (undocumented)
-    toArray(): IterableIterator<LinkedListItem<ListId, ListValue>>;
+    toArray(): IterableIterator<ListItem>;
 }
 
 // @public
 export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<ListId>> {
-    constructor(value: ListValue, prev?: LinkedListItem<ListId, ListValue>, next?: LinkedListItem<ListId, ListValue>);
+    constructor(value: ListValue, prev?: any, next?: any);
     headDistance(): number;
-    id: ListId;
+    get id(): ListId;
     log(): string;
     markAsBegin(): void;
     markAsEnd(): void;
-    next: LinkedListItem<ListId, ListValue> | null | undefined;
-    prev: LinkedListItem<ListId, ListValue> | null | undefined;
+    next: this | null | undefined;
+    prev: this | null | undefined;
     tailDistance(): number;
     value: ListValue;
 }

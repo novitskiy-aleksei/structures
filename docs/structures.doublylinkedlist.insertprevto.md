@@ -9,18 +9,17 @@ Insert new item to the list at given position
 <b>Signature:</b>
 
 ```typescript
-insertPrevTo(newKey: ListId, newItemIn: ListItem, position: ListId): ListItem;
+insertPrevTo(position: ListId, newItem: ListItem): this;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  newKey | <code>ListId</code> | identifier used to store inserted item |
-|  newItemIn | <code>ListItem</code> | inserted item |
 |  position | <code>ListId</code> | id of existing element previous to which make insert |
+|  newItem | <code>ListItem</code> | inserted item |
 
 <b>Returns:</b>
 
-`ListItem`
+`this`
 
