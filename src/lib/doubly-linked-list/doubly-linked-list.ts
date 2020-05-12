@@ -194,11 +194,20 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     const currentItem = this.hashTable.get(key);
 
     if (!currentItem) {
-      return;
+      return this;
     }
 
-    currentItem.prev.next = currentItem.next;
-    currentItem.next.prev = currentItem.prev;
+    if (currentItem.prev) {
+      currentItem.prev.next = currentItem.next;
+    } else {
+      this.head = currentItem.next;
+    }
+
+    if (currentItem.next) {
+      currentItem.next.prev = currentItem.prev;
+    } else {
+      this.tail = currentItem.prev;
+    }
 
     currentItem.next = null;
     currentItem.prev = null;
@@ -212,58 +221,14 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    * Deletes first item in a list
    */
   removeHead(): this {
-    const currentItem = this.head;
-
-    // empty list
-    if (!currentItem) {
-      return;
-    }
-
-    // single item list
-    if (!this.head.next) {
-      this.head = null;
-      this.tail = null;
-
-      // full list
-    } else {
-      this.head.next.prev = null;
-      this.head = this.head.next;
-    }
-
-    currentItem.next = currentItem.prev = null;
-    this.hashTable.delete(currentItem.value.id);
-    this._length--;
-
-    return this;
+    return this.remove(this.head.id);
   }
 
   /**
    * Deletes last item in a list
    */
   removeTail(): this {
-    const currentItem = this.tail;
-
-    // empty list
-    if (!currentItem) {
-      return;
-    }
-
-    // single item list
-    if (!this.tail.prev) {
-      this.head = null;
-      this.tail = null;
-
-      // full list
-    } else {
-      this.tail.prev.next = null;
-      this.tail = this.tail.prev;
-    }
-
-    currentItem.next = currentItem.prev = null;
-    this.hashTable.delete(currentItem.value.id);
-    this._length--;
-
-    return this;
+    return this.remove(this.tail.id);
   }
 
   toArray(): IterableIterator<ListItem> {
@@ -280,6 +245,29 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     this.tail = null;
     this.head = null;
     this.hashTable.clear();
+  }
+
+  /**
+   * Return visualisation string of list for debugging
+   */
+  log(): string {
+    let str = ':| ';
+    let item = this.head;
+
+    if (item && item.prev === undefined) {
+      str = '[global head] ' + str;
+    }
+    while (item) {
+      str += ` ${item.value.id} ->`;
+      item = item.next;
+    }
+    if (item === undefined) {
+      str += ' [global tail end]';
+    } else {
+      str += '>>'
+    }
+
+    return str;
   }
 
 }
