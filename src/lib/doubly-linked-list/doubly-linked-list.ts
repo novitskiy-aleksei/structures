@@ -53,14 +53,14 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
 
     while (currentItem) {
       yield currentItem;
-      currentItem = currentItem.next as ListItem;
+      currentItem = currentItem.next;
     }
   }
 
   /**
    * Iterator shorthand for iterating list object just like it is a native array
    */
-  [Symbol.iterator]() {
+  [Symbol.iterator](): IterableIterator<ListItem> {
     return this.iterator();
   }
 
@@ -227,7 +227,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
       // full list
     } else {
       this.head.next.prev = null;
-      this.head = this.head.next as ListItem;
+      this.head = this.head.next;
     }
 
     currentItem.next = currentItem.prev = null;
@@ -256,7 +256,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
       // full list
     } else {
       this.tail.prev.next = null;
-      this.tail = this.tail.prev as ListItem;
+      this.tail = this.tail.prev;
     }
 
     currentItem.next = currentItem.prev = null;
@@ -275,7 +275,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    *
    * Removes all items, sets length to zero, head&tail to null
    */
-  clear() {
+  clear(): void {
     this._length = 0;
     this.tail = null;
     this.head = null;

@@ -48,21 +48,6 @@ export interface LinkedListValue<ListId> {
     id: ListId;
 }
 
-// @alpha (undocumented)
-export abstract class ListOperator<T> {
-    constructor(data?: T[]);
-    // (undocumented)
-    addNew(item: T): void;
-    // (undocumented)
-    all(): T[];
-    // (undocumented)
-    has(item: T, identity: keyof T): boolean;
-    // (undocumented)
-    protected list: T[];
-    // (undocumented)
-    updateItemWith(key: keyof T, value: T): boolean;
-}
-
 
 // (No @packageDocumentation comment for this package)
 
