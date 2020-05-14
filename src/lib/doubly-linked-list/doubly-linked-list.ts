@@ -1,5 +1,6 @@
 import { LinkedListItem } from './linked-list-item';
 import { LinkedListValue } from './linked-list-value';
+import { UniqueControl } from './unique-control.decorator';
 
 /**
  * Doubly linked list
@@ -12,7 +13,11 @@ import { LinkedListValue } from './linked-list-value';
  *
  * @public
  */
-export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> {
+export abstract class DoublyLinkedList<
+  ListId = string,
+  ListValue extends LinkedListValue<ListId> = LinkedListValue<ListId>,
+  ListItem extends LinkedListItem<ListId, ListValue> = LinkedListItem<ListId, ListValue>,
+> {
 
   /**
    * First item in a linked list, has no items after it (no prev)
@@ -91,6 +96,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    * @param position - id of existing element next to which make insert
    * @param newItem - inserted item
    */
+  @UniqueControl()
   insertNextTo(position: ListId, newItem: ListItem): this {
     const previousItem = this.hashTable.get(position);
 
@@ -121,6 +127,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    * @param position - id of existing element previous to which make insert
    * @param newItem - inserted item
    */
+  @UniqueControl()
   insertPrevTo(position: ListId, newItem: ListItem): this {
     const nextItem = this.hashTable.get(position);
 
@@ -149,6 +156,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    *
    * @param newItem - item for adding to the end of list
    */
+  @UniqueControl()
   append(newItem: ListItem): this {
     if (!this.tail) {
       this.head = this.tail = newItem;
@@ -169,6 +177,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
    *
    * @param newItem - item for adding to the beginning of list
    */
+  @UniqueControl()
   prepend(newItem: ListItem): this {
     this.hashTable.set(newItem.id, newItem);
 

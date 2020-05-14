@@ -1,4 +1,5 @@
 import { generateArray, generateList, TestLinkedList, TestListItem, TestListValue } from './doubly-linked-list.factory';
+import { iterationPassAssert } from './iteration-pass-assert';
 
 describe('Doubly linked list', () => {
 
@@ -9,26 +10,9 @@ describe('Doubly linked list', () => {
 
   afterEach(() => {
     if (iterationPassTest?.list) {
-      iterationPassAsserting(iterationPassTest.list, iterationPassTest.cast);
+      iterationPassAssert(iterationPassTest.list, iterationPassTest.cast);
     }
   });
-
-  function iterationPassAsserting(list: TestLinkedList, cast: number[]) {
-    expect(list.length).toBe(cast.length);
-
-    let item = iterationPassTest.list.head;
-
-    // head -> tail
-    for (let i = 0; !!item; item = item.next, i++) {
-      expect(item.value.testField).toBe(cast[i]);
-    }
-    // tail -> head
-    for (let i = list.length; !!item; item = item.next, i--) {
-      expect(item.value.testField).toBe(cast[i]);
-    }
-
-    iterationPassTest = null;
-  }
 
   it('should initialize with sample array', () => {
     const itemCount = 100;
@@ -140,7 +124,7 @@ describe('Doubly linked list', () => {
   it('should be able to delete one item from list by its id', () => {
     const list  = generateList(8);
 
-    list.remove('5');
+    expect(list.remove('5')).toBe(list);
 
     expect(list.getBy('5')).toBeUndefined();
     expect(list.getBy('4').next.value.testField).toBe(6);
@@ -153,11 +137,11 @@ describe('Doubly linked list', () => {
 
   it('must be able to insert new item after existing one', () => {
     const list  = generateList(10);
-    const newItem = new TestListItem({id: 'inserted', testField: 777});
+    const newItem = new TestListItem({id: '777', testField: 777});
 
     list.insertPrevTo('8', newItem);
 
-    expect(list.getBy('inserted')).toBe(newItem);
+    expect(list.getBy('777')).toBe(newItem);
     expect(list.getBy('8').prev).toBe(newItem);
     expect(list.length).toBe(11);
 
@@ -168,11 +152,11 @@ describe('Doubly linked list', () => {
 
   it('must be able to insert new item before existing one', () => {
     const list  = generateList(11);
-    const newItem = new TestListItem({id: 'inserted', testField: 777});
+    const newItem = new TestListItem({id: '777', testField: 777});
 
     list.insertNextTo('7', newItem);
 
-    expect(list.getBy('inserted')).toBe(newItem);
+    expect(list.getBy('777')).toBe(newItem);
     expect(list.getBy('7').next).toBe(newItem);
     expect(list.length).toBe(12);
 

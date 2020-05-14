@@ -2,7 +2,7 @@ import { DoublyLinkedList } from '../../../lib/doubly-linked-list/doubly-linked-
 import { LinkedListItem } from '../../../lib/doubly-linked-list/linked-list-item';
 import { LinkedListValue } from '../../../lib/doubly-linked-list/linked-list-value';
 
-export class TestLinkedList extends DoublyLinkedList<string, TestListItem, TestListValue> {
+export class TestLinkedList extends DoublyLinkedList<string, TestListValue, TestListItem> {
 
 }
 
