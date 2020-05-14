@@ -195,6 +195,28 @@ export abstract class DoublyLinkedList<
   }
 
   /**
+   * Update existing item with provided one
+   *
+   * @param newItem Element to replace existing item in list
+   */
+  update(newItem: ListItem): this {
+    if (!this.hashTable.has(newItem.id)) {
+      throw new Error(`Unable to update: item with id ${newItem.id} does not exists`);
+    }
+
+    this.hashTable.set(newItem.id, newItem);
+
+    if (this.tail.id === newItem.id) {
+      this.tail = newItem;
+    }
+    if (this.head.id === newItem.id) {
+      this.head = newItem;
+    }
+
+    return this;
+  }
+
+  /**
    * Deletes item from linked list
    *
    * @param key - identifier for seeking deletion item

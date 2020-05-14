@@ -164,4 +164,33 @@ describe('Doubly linked list', () => {
     cast.splice(8, 0, 777);
     iterationPassTest = {cast, list};
   });
+
+  it('should be able to update existing item', () => {
+    const list  = generateList(7);
+    const newItem = new TestListItem({id: '3', testField: 333});
+    const newUnExistItem = new TestListItem({id: '777', testField: 777});
+
+    list.update(newItem);
+
+    expect(list.getBy('3').value.testField).toBe(333);
+    expect(() => list.update(newUnExistItem)).toThrow();
+
+    const cast = generateArray(7);
+    iterationPassTest = {cast, list};
+  });
+
+  it('should be able to update head and tail', () => {
+    const list  = generateList(17);
+    const newHead = new TestListItem({id: '0', testField: 100});
+    const newTail = new TestListItem({id: '16', testField: 116});
+
+    list.update(newTail);
+    list.update(newHead);
+
+    expect(list.head.value.testField).toBe(100);
+    expect(list.tail.value.testField).toBe(116);
+
+    const cast = generateArray(17);
+    iterationPassTest = {cast, list};
+  });
 });
