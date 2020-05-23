@@ -98,6 +98,7 @@ export abstract class DoublyLinkedList<
    */
   @UniqueControl()
   insertNextTo(position: ListId, newItem: ListItem): this {
+    newItem = newItem.copy();
     const previousItem = this.hashTable.get(position);
 
     if (!previousItem) {
@@ -129,6 +130,7 @@ export abstract class DoublyLinkedList<
    */
   @UniqueControl()
   insertPrevTo(position: ListId, newItem: ListItem): this {
+    newItem = newItem.copy();
     const nextItem = this.hashTable.get(position);
 
     if (!nextItem) {
@@ -139,7 +141,7 @@ export abstract class DoublyLinkedList<
     newItem.prev = nextItem.prev;
 
     if (!nextItem.prev) {
-      this.tail = newItem;
+      this.head = newItem;
     } else {
       nextItem.prev.next = newItem;
     }
@@ -158,6 +160,7 @@ export abstract class DoublyLinkedList<
    */
   @UniqueControl()
   append(newItem: ListItem): this {
+    newItem = newItem.copy();
     if (!this.tail) {
       this.head = this.tail = newItem;
     } else {
@@ -179,6 +182,7 @@ export abstract class DoublyLinkedList<
    */
   @UniqueControl()
   prepend(newItem: ListItem): this {
+    newItem = newItem.copy();
     this.hashTable.set(newItem.id, newItem);
 
     if (!this.head) {
@@ -204,7 +208,9 @@ export abstract class DoublyLinkedList<
       throw new Error(`Unable to update: item with id ${newItem.id} does not exists`);
     }
 
-    this.hashTable.set(newItem.id, newItem);
+    const item = this.hashTable.get(newItem.id);
+    item.value = newItem.value;
+    this.hashTable.set(item.id, item);
 
     if (this.tail.id === newItem.id) {
       this.tail = newItem;

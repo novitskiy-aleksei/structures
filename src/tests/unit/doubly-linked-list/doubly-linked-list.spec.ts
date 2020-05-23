@@ -135,14 +135,14 @@ describe('Doubly linked list', () => {
     iterationPassTest = {cast, list};
   });
 
-  it('must be able to insert new item after existing one', () => {
+  it('must be able to insert new item before existing one', () => {
     const list  = generateList(10);
     const newItem = new TestListItem({id: '777', testField: 777});
 
     list.insertPrevTo('8', newItem);
 
-    expect(list.getBy('777')).toBe(newItem);
-    expect(list.getBy('8').prev).toBe(newItem);
+    expect(list.getBy('777').id).toBe(newItem.id);
+    expect(list.getBy('8').prev.id).toBe(newItem.id);
     expect(list.length).toBe(11);
 
     const cast = generateArray(10);
@@ -150,15 +150,33 @@ describe('Doubly linked list', () => {
     iterationPassTest = {cast, list};
   });
 
-  it('must be able to insert new item before existing one', () => {
+  it('should insert new item before existing head and become new heading item', () => {
+    const list  = generateList(10);
+    const newItem = new TestListItem({id: '-1', testField: 777});
+
+    list.insertPrevTo('0', newItem);
+
+    expect(list.getBy('-1').value.testField).toBe(newItem.value.testField);
+    expect(list.head.id).toBe(newItem.id);
+    expect(list.length).toBe(11);
+
+    const cast = generateArray(10);
+    cast.unshift(-1);
+    iterationPassTest = {cast, list};
+  });
+
+  it('must be able to insert new item after existing one', () => {
     const list  = generateList(11);
     const newItem = new TestListItem({id: '777', testField: 777});
 
     list.insertNextTo('7', newItem);
 
-    expect(list.getBy('777')).toBe(newItem);
-    expect(list.getBy('7').next).toBe(newItem);
+    expect(list.getBy('777').value.testField).toBe(newItem.value.testField);
+    expect(list.getBy('7').next.id).toBe(newItem.id);
     expect(list.length).toBe(12);
+    // check method immutability
+    expect(newItem.prev).toBeNull();
+    expect(newItem.next).toBeNull();
 
     const cast = generateArray(11);
     cast.splice(8, 0, 777);

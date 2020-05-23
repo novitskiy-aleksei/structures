@@ -1,4 +1,4 @@
-import { generateList } from './doubly-linked-list.factory';
+import { generateList, TestListItem, TestListValue } from './doubly-linked-list.factory';
 
 describe('Doubly linked list item', () => {
 
@@ -34,4 +34,13 @@ describe('Doubly linked list item', () => {
     expect(list.getBy('3').tailDistance()).toBe(6);
   });
 
+  it('should be able to copy own object', () => {
+    const item = new TestListItem({id: 'test', testField: 555});
+
+    const itemCopy = item.copy();
+
+    expect(item).not.toBe(itemCopy);
+    expect(itemCopy.id).toBe('test');
+    expect(itemCopy.value.testField).toBe(555);
+  });
 });

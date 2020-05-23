@@ -41,6 +41,14 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
   }
 
   /**
+   * Makes a one level copy of current item.
+   * Used in insert methods to not break input immutability
+   */
+  copy(): this {
+    return new (<any>this.constructor)(this.value, this.prev, this.next);
+  }
+
+  /**
    * Marks this element as global list ending
    */
   markAsEnd(): void {
