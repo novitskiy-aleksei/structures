@@ -45,7 +45,7 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
    * Used in insert methods to not break input immutability
    */
   copy(): this {
-    return new (<any>this.constructor)(this.value, this.prev, this.next);
+    return new (this.constructor as any)(this.value, this.prev, this.next); // eslint-disable-line @typescript-eslint/no-explicit-any
   }
 
   /**

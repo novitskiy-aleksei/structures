@@ -16,22 +16,109 @@
       "name": "",
       "members": [
         {
+          "kind": "Interface",
+          "canonicalReference": "@webcobra/structures!ChainLoadRequest:interface",
+          "docComment": "/**\n * Describes request for initial loading or load more items, also used when applying update to chain\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ChainLoadRequest "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ChainLoadRequest",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!ChainLoadRequest#count:member",
+              "docComment": "/**\n * Amount of items to load\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "count?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "count",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!ChainLoadRequest#direction:member",
+              "docComment": "/**\n * Direction for moving through chain - down to old elements or up to new\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "direction: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LoadDirection",
+                  "canonicalReference": "@webcobra/structures!LoadDirection:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "direction",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!ChainLoadRequest#from:member",
+              "docComment": "/**\n * Pointer item for retrieving or applying items.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "from: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "from",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Class",
           "canonicalReference": "@webcobra/structures!DoublyLinkedList:class",
           "docComment": "/**\n * Doubly linked list\n *\n * Uses ES2015 Map for storing items which is more efficient in manipulating list items instead array especially on large amount of nodes. Contains helper functions for inserting, checking, etc\n *\n * todo: usage\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare abstract class DoublyLinkedList<ListId, ListItem extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "LinkedListItem",
-              "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+              "text": "export declare abstract class DoublyLinkedList<ListId = "
             },
             {
               "kind": "Content",
-              "text": "<ListId, ListValue>"
+              "text": "string"
             },
             {
               "kind": "Content",
@@ -44,7 +131,46 @@
             },
             {
               "kind": "Content",
+              "text": "<ListId> "
+            },
+            {
+              "kind": "Content",
+              "text": "= "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListValue",
+              "canonicalReference": "@webcobra/structures!LinkedListValue:interface"
+            },
+            {
+              "kind": "Content",
               "text": "<ListId>"
+            },
+            {
+              "kind": "Content",
+              "text": ", ListItem extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListItem",
+              "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<ListId, ListValue> "
+            },
+            {
+              "kind": "Content",
+              "text": "= "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListItem",
+              "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<ListId, ListValue>"
             },
             {
               "kind": "Content",
@@ -60,30 +186,30 @@
                 "endIndex": 0
               },
               "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
-              }
-            },
-            {
-              "typeParameterName": "ListItem",
-              "constraintTokenRange": {
                 "startIndex": 1,
-                "endIndex": 3
-              },
-              "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
+                "endIndex": 2
               }
             },
             {
               "typeParameterName": "ListValue",
               "constraintTokenRange": {
-                "startIndex": 4,
-                "endIndex": 6
+                "startIndex": 3,
+                "endIndex": 5
               },
               "defaultTypeTokenRange": {
-                "startIndex": 0,
-                "endIndex": 0
+                "startIndex": 6,
+                "endIndex": 8
+              }
+            },
+            {
+              "typeParameterName": "ListItem",
+              "constraintTokenRange": {
+                "startIndex": 9,
+                "endIndex": 11
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 12,
+                "endIndex": 14
               }
             }
           ],
@@ -567,6 +693,34 @@
             },
             {
               "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#log:member(1)",
+              "docComment": "/**\n * Return visualisation string of list for debugging\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "log(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "log"
+            },
+            {
+              "kind": "Method",
               "canonicalReference": "@webcobra/structures!DoublyLinkedList#prepend:member(1)",
               "docComment": "/**\n * Adds the element at the beginning of the linked list\n *\n * @param newItem - item for adding to the beginning of list\n */\n",
               "excerptTokens": [
@@ -767,6 +921,50 @@
               "overloadIndex": 1,
               "parameters": [],
               "name": "toArray"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList#update:member(1)",
+              "docComment": "/**\n * Update existing item with provided one\n *\n * @param newItem - Element to replace existing item in list\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "update(newItem: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ListItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "update"
             }
           ],
           "implementsTokenRanges": []
@@ -880,6 +1078,34 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!LinkedListItem#copy:member(1)",
+              "docComment": "/**\n * Makes a one level copy of current item. Used in insert methods to not break input immutability\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "copy(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "copy"
             },
             {
               "kind": "Method",
@@ -1181,6 +1407,912 @@
             }
           ],
           "extendsTokenRanges": []
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@webcobra/structures!LoadDirection:enum",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum LoadDirection "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "LoadDirection",
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@webcobra/structures!LoadDirection.down:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "down = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "down",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@webcobra/structures!LoadDirection.up:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "up = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "up",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ]
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@webcobra/structures!MessageChain:class",
+          "docComment": "/**\n * Message chain is a data structure which is based on doubly linked list extending it with abilities to consume another chains of any sizes and updates existing items, methods for dynamically loading it parts, syncing, controlling length and managing shifted nodes which is viable for building messaging feed\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class MessageChain<ChainId, ChainValue extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "MessageChainValue",
+              "canonicalReference": "@webcobra/structures!MessageChainValue:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<ChainId>"
+            },
+            {
+              "kind": "Content",
+              "text": "> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "DoublyLinkedList",
+              "canonicalReference": "@webcobra/structures!DoublyLinkedList:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<ChainId, ChainValue, "
+            },
+            {
+              "kind": "Reference",
+              "text": "MessageChainElement",
+              "canonicalReference": "@webcobra/structures!MessageChainElement:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<ChainId, ChainValue>> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "ChainId",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "ChainValue",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "MessageChain",
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#append:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "append(newItem: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageChainElement",
+                  "canonicalReference": "@webcobra/structures!MessageChainElement:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ChainId, ChainValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  }
+                }
+              ],
+              "name": "append"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#consume:member(1)",
+              "docComment": "/**\n * Apply updates for current chain from provided\n *\n * Inserts new elements and updates current chain items with same items in update with greater timestamp\n *\n * @param update - Consumable chain which used to update current\n *\n * @param loadRequest - If update was requested by ChainLoadRequest, then you can provide it to help recognize how to apply 'update' chain\n *\n * @example\n * ```typescript\n * const result = currentChain.consume(updateChain);\n * ```\n *\n * ```\n * | Current chain | Update chain | Result         |\n * |---------------|--------------|----------------|\n * | 0,1,2         | -3,-2,-1,0   | -3,-2,-1,0,1,2 |\n * | 0,1,2         | 0,1,2        | 0,1,2          |\n * | 0,1,2         | 2,3,4        | 0,1,2,3,4      |\n * | 0,1,2,3       | 2,3,4        | 0,1,2,3,4      |\n * | 0,1,2,3       | 1,2          | 0,1,2,3        |\n * | 0,1,2,3       | 1,2,22       | 0,1,2,22,3     |\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "consume(update: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", loadRequest?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ChainLoadRequest",
+                  "canonicalReference": "@webcobra/structures!ChainLoadRequest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "update",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "loadRequest",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "consume"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#getAttachDirection:member(1)",
+              "docComment": "/**\n * Calculates right attach direction between provided chain and this\n *\n * @param intersectionId - id of first intersection item between update and this\n *\n * @param update - Chain provided to calculate right direction for possible upserting\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected getAttachDirection(intersectionId: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ChainId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", update: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LoadDirection",
+                  "canonicalReference": "@webcobra/structures!LoadDirection:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "intersectionId",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "update",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "getAttachDirection"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#getBy:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getBy(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ChainId"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageChainElement",
+                  "canonicalReference": "@webcobra/structures!MessageChainElement:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ChainId, ChainValue> | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "getBy"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#insertNextTo:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "insertNextTo(position: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ChainId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", newItem: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageChainElement",
+                  "canonicalReference": "@webcobra/structures!MessageChainElement:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ChainId, ChainValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "position",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "insertNextTo"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#insertPrevTo:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "insertPrevTo(position: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ChainId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", newItem: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageChainElement",
+                  "canonicalReference": "@webcobra/structures!MessageChainElement:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ChainId, ChainValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "position",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "insertPrevTo"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#prepend:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "prepend(newItem: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageChainElement",
+                  "canonicalReference": "@webcobra/structures!MessageChainElement:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ChainId, ChainValue>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "newItem",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  }
+                }
+              ],
+              "name": "prepend"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#searchIntersection:member(1)",
+              "docComment": "/**\n * Calculates intersection item - first element which exists in current and provided chain\n *\n * @param update - Chain provided to calculate intersection with\n *\n * @returns MessageChainElement - First element which exists in current chain and provided\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected searchIntersection(update: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageChainElement",
+                  "canonicalReference": "@webcobra/structures!MessageChainElement:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ChainId, ChainValue> | null"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "update",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "searchIntersection"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#setLimit:member(1)",
+              "docComment": "/**\n * Set maximum amount of items which current chain can contain\n *\n * @param newLimit - new maximum size of current chain\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "setLimit(newLimit: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "newLimit",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "setLimit"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChain#upsert:member(1)",
+              "docComment": "/**\n * Insert new items from provided chain or updates existed if it's required\n *\n * @param update - Chain with updated information\n *\n * @param loadRequest - Info how to attach provided chain\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected upsert(update: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", loadRequest: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ChainLoadRequest",
+                  "canonicalReference": "@webcobra/structures!ChainLoadRequest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "this"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "update",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "loadRequest",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "name": "upsert"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 4,
+            "endIndex": 8
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@webcobra/structures!MessageChainElement:class",
+          "docComment": "/**\n * MessageChain node which represents one element in chain\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class MessageChainElement<ChainId, ChainValue extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListValue",
+              "canonicalReference": "@webcobra/structures!LinkedListValue:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<ChainId>"
+            },
+            {
+              "kind": "Content",
+              "text": "> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListItem",
+              "canonicalReference": "@webcobra/structures!LinkedListItem:class"
+            },
+            {
+              "kind": "Content",
+              "text": "<ChainId, ChainValue> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "ChainId",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "ChainValue",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "MessageChainElement",
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@webcobra/structures!MessageChainElement#getLoadInfo:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getLoadInfo(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ChainLoadRequest",
+                  "canonicalReference": "@webcobra/structures!ChainLoadRequest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "getLoadInfo"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 4,
+            "endIndex": 6
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@webcobra/structures!MessageChainValue:interface",
+          "docComment": "/**\n * Chain basic value Describes fields which must exist in every chain value\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface MessageChainValue<ChainId> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "LinkedListValue",
+              "canonicalReference": "@webcobra/structures!LinkedListValue:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<ChainId> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "ChainId",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "MessageChainValue",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!MessageChainValue#created:member",
+              "docComment": "/**\n * Timestamps to determine freshness of item\n *\n * Next item always created after previous one: prev \\> current \\< next \\< next\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "created: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "created",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!MessageChainValue#unSynced:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "unSynced?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "unSynced",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@webcobra/structures!MessageChainValue#updated:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "updated: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "updated",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
         }
       ]
     }

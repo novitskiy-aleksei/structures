@@ -10,10 +10,20 @@
 |  --- | --- |
 |  [DoublyLinkedList](./structures.doublylinkedlist.md) | Doubly linked list<!-- -->Uses ES2015 Map for storing items which is more efficient in manipulating list items instead array especially on large amount of nodes. Contains helper functions for inserting, checking, etc<!-- -->todo: usage |
 |  [LinkedListItem](./structures.linkedlistitem.md) | Wraps linked list item with various information about siblings |
+|  [MessageChain](./structures.messagechain.md) | Message chain is a data structure which is based on doubly linked list extending it with abilities to consume another chains of any sizes and updates existing items, methods for dynamically loading it parts, syncing, controlling length and managing shifted nodes which is viable for building messaging feed |
+|  [MessageChainElement](./structures.messagechainelement.md) | MessageChain node which represents one element in chain |
+
+## Enumerations
+
+|  Enumeration | Description |
+|  --- | --- |
+|  [LoadDirection](./structures.loaddirection.md) |  |
 
 ## Interfaces
 
 |  Interface | Description |
 |  --- | --- |
+|  [ChainLoadRequest](./structures.chainloadrequest.md) | Describes request for initial loading or load more items, also used when applying update to chain |
 |  [LinkedListValue](./structures.linkedlistvalue.md) | Linked list basic value |
+|  [MessageChainValue](./structures.messagechainvalue.md) | Chain basic value Describes fields which must exist in every chain value |
 

@@ -19,6 +19,7 @@ Run `npm i @webcobra/structures` or `yarn add @webcobra/structures` for yarn use
 Please, check individual structure for usage notes/examples
 
 - [Doubly linked list](/docs/structures.doublylinkedlist.md)
+- [MessageChain](/docs/structures.messagechain.md)
 
 ## Contributing, running tests and local checkout
 

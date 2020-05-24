@@ -31,6 +31,7 @@ export declare abstract class LinkedListItem<ListId, ListValue extends LinkedLis
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
+|  [copy()](./structures.linkedlistitem.copy.md) |  | Makes a one level copy of current item. Used in insert methods to not break input immutability |
 |  [headDistance()](./structures.linkedlistitem.headdistance.md) |  | Calculates element amount left to list begin |
 |  [log()](./structures.linkedlistitem.log.md) |  | Make string representation of this item for debugging purposes |
 |  [markAsBegin()](./structures.linkedlistitem.markasbegin.md) |  | Marks this element as global list begin |

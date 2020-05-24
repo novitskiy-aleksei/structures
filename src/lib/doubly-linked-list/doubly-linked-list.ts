@@ -201,7 +201,7 @@ export abstract class DoublyLinkedList<
   /**
    * Update existing item with provided one
    *
-   * @param newItem Element to replace existing item in list
+   * @param newItem - Element to replace existing item in list
    */
   update(newItem: ListItem): this {
     if (!this.hashTable.has(newItem.id)) {

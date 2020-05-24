@@ -1,7 +1,22 @@
-import { RetrieveDirection } from './retrieve-direction';
+import { LoadDirection } from './load-direction';
 
-export interface ChainLoadRequest {
-  count: number;
-  direction: RetrieveDirection;
-  from: any;
+/**
+ * Describes request for initial loading or load more items, also used when applying update to chain
+ * @public
+ */
+export interface ChainLoadRequest<ChainId> {
+  /**
+   * Amount of items to load
+   */
+  count?: number;
+
+  /**
+   * Direction for moving through chain - down to old elements or up to new
+   */
+  direction: LoadDirection;
+
+  /**
+   * Pointer item for retrieving or applying items.
+   */
+  from: ChainId;
 }

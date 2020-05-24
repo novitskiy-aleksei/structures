@@ -1,16 +1,20 @@
 import { LinkedListItem } from '../doubly-linked-list/linked-list-item';
 import { ChainLoadRequest } from './chain-load-request';
-import { RetrieveDirection } from './retrieve-direction';
+import { LoadDirection } from './load-direction';
 import { LinkedListValue } from '../doubly-linked-list/linked-list-value';
 
+/**
+ * MessageChain node which represents one element in chain
+ * @public
+ */
 export class MessageChainElement<ChainId, ChainValue extends LinkedListValue<ChainId>> extends LinkedListItem<ChainId, ChainValue> {
 
   getLoadInfo(): Partial<ChainLoadRequest> {
-    if (!this.prev) {
-      return {direction: RetrieveDirection.down, from: this.value.id};
+    if (!this.prev && this.next) {
+      return {direction: LoadDirection.down, from: this.next.value.id};
     }
-    if (!this.next) {
-      return {direction: RetrieveDirection.up, from: this.value.id};
+    if (!this.next && this.prev) {
+      return {direction: LoadDirection.up, from: this.prev.value.id};
     }
   }
 

@@ -13,7 +13,7 @@ todo: usage
 <b>Signature:</b>
 
 ```typescript
-export declare abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> 
+export declare abstract class DoublyLinkedList<ListId = string, ListValue extends LinkedListValue<ListId> = LinkedListValue<ListId>, ListItem extends LinkedListItem<ListId, ListValue> = LinkedListItem<ListId, ListValue>> 
 ```
 
 ## Constructors
@@ -44,9 +44,11 @@ export declare abstract class DoublyLinkedList<ListId, ListItem extends LinkedLi
 |  [insertPrevTo(position, newItem)](./structures.doublylinkedlist.insertprevto.md) |  | Insert new item to the list at given position |
 |  [isEmpty()](./structures.doublylinkedlist.isempty.md) |  | Indicate that list has no items |
 |  [iterator()](./structures.doublylinkedlist.iterator.md) |  | Generator for iterating through list like native array |
+|  [log()](./structures.doublylinkedlist.log.md) |  | Return visualisation string of list for debugging |
 |  [prepend(newItem)](./structures.doublylinkedlist.prepend.md) |  | Adds the element at the beginning of the linked list |
 |  [remove(key)](./structures.doublylinkedlist.remove.md) |  | Deletes item from linked list |
 |  [removeHead()](./structures.doublylinkedlist.removehead.md) |  | Deletes first item in a list |
 |  [removeTail()](./structures.doublylinkedlist.removetail.md) |  | Deletes last item in a list |
 |  [toArray()](./structures.doublylinkedlist.toarray.md) |  |  |
+|  [update(newItem)](./structures.doublylinkedlist.update.md) |  | Update existing item with provided one |
 

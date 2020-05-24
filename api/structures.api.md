@@ -5,7 +5,14 @@
 ```ts
 
 // @public
-export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<ListId, ListValue>, ListValue extends LinkedListValue<ListId>> {
+export interface ChainLoadRequest {
+    count?: number;
+    direction: LoadDirection;
+    from: any;
+}
+
+// @public
+export abstract class DoublyLinkedList<ListId = string, ListValue extends LinkedListValue<ListId> = LinkedListValue<ListId>, ListItem extends LinkedListItem<ListId, ListValue> = LinkedListItem<ListId, ListValue>> {
     [Symbol.iterator](): IterableIterator<ListItem>;
     constructor(items: ListItem[]);
     append(newItem: ListItem): this;
@@ -19,6 +26,7 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     iterator(): IterableIterator<ListItem>;
     get length(): number;
     protected _length: number;
+    log(): string;
     prepend(newItem: ListItem): this;
     remove(key: ListId): this;
     removeHead(): this;
@@ -26,11 +34,13 @@ export abstract class DoublyLinkedList<ListId, ListItem extends LinkedListItem<L
     tail: ListItem;
     // (undocumented)
     toArray(): IterableIterator<ListItem>;
+    update(newItem: ListItem): this;
 }
 
 // @public
 export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<ListId>> {
     constructor(value: ListValue, prev?: any, next?: any);
+    copy(): this;
     headDistance(): number;
     get id(): ListId;
     log(): string;
@@ -46,6 +56,48 @@ export abstract class LinkedListItem<ListId, ListValue extends LinkedListValue<L
 export interface LinkedListValue<ListId> {
     // (undocumented)
     id: ListId;
+}
+
+// @public (undocumented)
+export enum LoadDirection {
+    // (undocumented)
+    down = 2,
+    // (undocumented)
+    up = 1
+}
+
+// @public
+export class MessageChain<ChainId, ChainValue extends MessageChainValue<ChainId>> extends DoublyLinkedList<ChainId, ChainValue, MessageChainElement<ChainId, ChainValue>> {
+    // (undocumented)
+    append(newItem: MessageChainElement<ChainId, ChainValue>): this;
+    consume(update: this, loadRequest?: ChainLoadRequest): this;
+    protected getAttachDirection(intersectionId: ChainId, update: this): LoadDirection;
+    // (undocumented)
+    getBy(key: ChainId): MessageChainElement<ChainId, ChainValue> | undefined;
+    // (undocumented)
+    insertNextTo(position: ChainId, newItem: MessageChainElement<ChainId, ChainValue>): this;
+    // (undocumented)
+    insertPrevTo(position: ChainId, newItem: MessageChainElement<ChainId, ChainValue>): this;
+    // (undocumented)
+    prepend(newItem: MessageChainElement<ChainId, ChainValue>): this;
+    protected searchIntersection(update: this): MessageChainElement<ChainId, ChainValue> | null;
+    setLimit(newLimit: number): void;
+    protected upsert(update: this, loadRequest: ChainLoadRequest): this;
+}
+
+// @public
+export class MessageChainElement<ChainId, ChainValue extends LinkedListValue<ChainId>> extends LinkedListItem<ChainId, ChainValue> {
+    // (undocumented)
+    getLoadInfo(): Partial<ChainLoadRequest>;
+}
+
+// @public
+export interface MessageChainValue<ChainId> extends LinkedListValue<ChainId> {
+    created: number;
+    // (undocumented)
+    unSynced?: boolean;
+    // (undocumented)
+    updated: number;
 }
 
 
