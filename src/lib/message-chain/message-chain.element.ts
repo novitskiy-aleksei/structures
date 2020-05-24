@@ -9,7 +9,7 @@ import { LinkedListValue } from '../doubly-linked-list/linked-list-value';
  */
 export class MessageChainElement<ChainId, ChainValue extends LinkedListValue<ChainId>> extends LinkedListItem<ChainId, ChainValue> {
 
-  getLoadInfo(): Partial<ChainLoadRequest> {
+  getLoadInfo(): Partial<ChainLoadRequest<ChainId>> {
     if (!this.prev && this.next) {
       return {direction: LoadDirection.down, from: this.next.value.id};
     }

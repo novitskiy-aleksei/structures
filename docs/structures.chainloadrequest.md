@@ -9,7 +9,7 @@ Describes request for initial loading or load more items, also used when applyin
 <b>Signature:</b>
 
 ```typescript
-export interface ChainLoadRequest 
+export interface ChainLoadRequest<ChainId> 
 ```
 
 ## Properties
@@ -18,5 +18,5 @@ export interface ChainLoadRequest
 |  --- | --- | --- |
 |  [count](./structures.chainloadrequest.count.md) | <code>number</code> | Amount of items to load |
 |  [direction](./structures.chainloadrequest.direction.md) | <code>LoadDirection</code> | Direction for moving through chain - down to old elements or up to new |
-|  [from](./structures.chainloadrequest.from.md) | <code>any</code> | Pointer item for retrieving or applying items. |
+|  [from](./structures.chainloadrequest.from.md) | <code>ChainId</code> | Pointer item for retrieving or applying items. |
 

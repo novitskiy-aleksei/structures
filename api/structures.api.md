@@ -5,10 +5,10 @@
 ```ts
 
 // @public
-export interface ChainLoadRequest {
+export interface ChainLoadRequest<ChainId> {
     count?: number;
     direction: LoadDirection;
-    from: any;
+    from: ChainId;
 }
 
 // @public
@@ -70,7 +70,7 @@ export enum LoadDirection {
 export class MessageChain<ChainId, ChainValue extends MessageChainValue<ChainId>> extends DoublyLinkedList<ChainId, ChainValue, MessageChainElement<ChainId, ChainValue>> {
     // (undocumented)
     append(newItem: MessageChainElement<ChainId, ChainValue>): this;
-    consume(update: this, loadRequest?: ChainLoadRequest): this;
+    consume(update: this, loadRequest?: ChainLoadRequest<ChainId>): this;
     protected getAttachDirection(intersectionId: ChainId, update: this): LoadDirection;
     // (undocumented)
     getBy(key: ChainId): MessageChainElement<ChainId, ChainValue> | undefined;
@@ -81,14 +81,14 @@ export class MessageChain<ChainId, ChainValue extends MessageChainValue<ChainId>
     // (undocumented)
     prepend(newItem: MessageChainElement<ChainId, ChainValue>): this;
     protected searchIntersection(update: this): MessageChainElement<ChainId, ChainValue> | null;
-    setLimit(newLimit: number): void;
-    protected upsert(update: this, loadRequest: ChainLoadRequest): this;
+    setLimit(newLimit: number): this;
+    protected upsert(update: this, loadRequest: ChainLoadRequest<ChainId>): this;
 }
 
 // @public
 export class MessageChainElement<ChainId, ChainValue extends LinkedListValue<ChainId>> extends LinkedListItem<ChainId, ChainValue> {
     // (undocumented)
-    getLoadInfo(): Partial<ChainLoadRequest>;
+    getLoadInfo(): Partial<ChainLoadRequest<ChainId>>;
 }
 
 // @public

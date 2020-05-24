@@ -47,7 +47,7 @@ export class MessageChain<ChainId, ChainValue extends MessageChainValue<ChainId>
    * @param loadRequest - If update was requested by ChainLoadRequest,
    * then you can provide it to help recognize how to apply 'update' chain
    */
-  consume(update: this, loadRequest?: ChainLoadRequest): this {
+  consume(update: this, loadRequest?: ChainLoadRequest<ChainId>): this {
     if (update.length === 0) {
       if (update.head === undefined) {
         this.head.markAsBegin();
@@ -187,7 +187,7 @@ export class MessageChain<ChainId, ChainValue extends MessageChainValue<ChainId>
    * @param update - Chain with updated information
    * @param loadRequest - Info how to attach provided chain
    */
-  protected upsert(update: this, loadRequest: ChainLoadRequest): this {
+  protected upsert(update: this, loadRequest: ChainLoadRequest<ChainId>): this {
     const current = this.getBy(loadRequest.from);
     const fresh = update.getBy(loadRequest.from);
 

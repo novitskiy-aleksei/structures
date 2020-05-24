@@ -9,7 +9,7 @@ Set maximum amount of items which current chain can contain
 <b>Signature:</b>
 
 ```typescript
-setLimit(newLimit: number): void;
+setLimit(newLimit: number): this;
 ```
 
 ## Parameters
@@ -20,5 +20,5 @@ setLimit(newLimit: number): void;
 
 <b>Returns:</b>
 
-`void`
+`this`
 

@@ -11,7 +11,7 @@ Inserts new elements and updates current chain items with same items in update w
 <b>Signature:</b>
 
 ```typescript
-consume(update: this, loadRequest?: ChainLoadRequest): this;
+consume(update: this, loadRequest?: ChainLoadRequest<ChainId>): this;
 ```
 
 ## Parameters
@@ -19,7 +19,7 @@ consume(update: this, loadRequest?: ChainLoadRequest): this;
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  update | <code>this</code> | Consumable chain which used to update current |
-|  loadRequest | <code>ChainLoadRequest</code> | If update was requested by ChainLoadRequest, then you can provide it to help recognize how to apply 'update' chain |
+|  loadRequest | <code>ChainLoadRequest&lt;ChainId&gt;</code> | If update was requested by ChainLoadRequest, then you can provide it to help recognize how to apply 'update' chain |
 
 <b>Returns:</b>
 

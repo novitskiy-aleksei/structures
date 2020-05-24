@@ -9,7 +9,7 @@ Insert new items from provided chain or updates existed if it's required
 <b>Signature:</b>
 
 ```typescript
-protected upsert(update: this, loadRequest: ChainLoadRequest): this;
+protected upsert(update: this, loadRequest: ChainLoadRequest<ChainId>): this;
 ```
 
 ## Parameters
@@ -17,7 +17,7 @@ protected upsert(update: this, loadRequest: ChainLoadRequest): this;
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  update | <code>this</code> | Chain with updated information |
-|  loadRequest | <code>ChainLoadRequest</code> | Info how to attach provided chain |
+|  loadRequest | <code>ChainLoadRequest&lt;ChainId&gt;</code> | Info how to attach provided chain |
 
 <b>Returns:</b>
 

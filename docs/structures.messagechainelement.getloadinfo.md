@@ -7,9 +7,9 @@
 <b>Signature:</b>
 
 ```typescript
-getLoadInfo(): Partial<ChainLoadRequest>;
+getLoadInfo(): Partial<ChainLoadRequest<ChainId>>;
 ```
 <b>Returns:</b>
 
-`Partial<ChainLoadRequest>`
+`Partial<ChainLoadRequest<ChainId>>`
 

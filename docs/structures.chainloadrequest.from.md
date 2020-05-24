@@ -9,5 +9,5 @@ Pointer item for retrieving or applying items.
 <b>Signature:</b>
 
 ```typescript
-from: any;
+from: ChainId;
 ```
