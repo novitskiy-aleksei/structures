@@ -13,5 +13,5 @@ removeTail(): this;
 ```
 <b>Returns:</b>
 
-`this`
+this
 

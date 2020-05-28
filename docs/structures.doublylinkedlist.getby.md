@@ -16,9 +16,9 @@ getBy(key: ListId): ListItem | undefined;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  key | <code>ListId</code> |  |
+|  key | ListId |  |
 
 <b>Returns:</b>
 
-`ListItem | undefined`
+ListItem \| undefined
 

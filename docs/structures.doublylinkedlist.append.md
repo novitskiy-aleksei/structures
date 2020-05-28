@@ -16,9 +16,9 @@ append(newItem: ListItem): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  newItem | <code>ListItem</code> | item for adding to the end of list |
+|  newItem | ListItem | item for adding to the end of list |
 
 <b>Returns:</b>
 
-`this`
+this
 

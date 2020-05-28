@@ -13,5 +13,5 @@ isEmpty(): boolean;
 ```
 <b>Returns:</b>
 
-`boolean`
+boolean
 

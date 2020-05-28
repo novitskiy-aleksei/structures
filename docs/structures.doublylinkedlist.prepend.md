@@ -16,9 +16,9 @@ prepend(newItem: ListItem): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  newItem | <code>ListItem</code> | item for adding to the beginning of list |
+|  newItem | ListItem | item for adding to the beginning of list |
 
 <b>Returns:</b>
 
-`this`
+this
 

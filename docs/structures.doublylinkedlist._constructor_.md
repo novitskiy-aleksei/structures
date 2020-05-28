@@ -16,5 +16,5 @@ constructor(items: ListItem[]);
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  items | <code>ListItem[]</code> |  |
+|  items | ListItem\[\] |  |
 

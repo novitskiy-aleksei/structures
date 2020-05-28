@@ -26,11 +26,11 @@ export declare abstract class DoublyLinkedList<ListId = string, ListValue extend
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [\_length](./structures.doublylinkedlist._length.md) |  | <code>number</code> | Indicates amount of items in list, usually must be equal to map length |
-|  [hashTable](./structures.doublylinkedlist.hashtable.md) |  | <code>Map&lt;ListId, ListItem&gt;</code> | Store for list items<!-- -->Here used a Map with custom iterator (see this.\*iterator()) instead of usual array cause Map works faster in most operations which required to manipulate linked list. Even iteration in for loop with 'downlevelIteration' flag in most environments works equal or faster. (see performance tests) |
-|  [head](./structures.doublylinkedlist.head.md) |  | <code>ListItem</code> | First item in a linked list, has no items after it (no prev) |
-|  [length](./structures.doublylinkedlist.length.md) |  | <code>number</code> | Get the amount of items in list |
-|  [tail](./structures.doublylinkedlist.tail.md) |  | <code>ListItem</code> | Last item in a linked list, has no items before it (no next) |
+|  [\_length](./structures.doublylinkedlist._length.md) |  | number | Indicates amount of items in list, usually must be equal to map length |
+|  [hashTable](./structures.doublylinkedlist.hashtable.md) |  | Map&lt;ListId, ListItem&gt; | Store for list items<!-- -->Here used a Map with custom iterator (see this.\*iterator()) instead of usual array cause Map works faster in most operations which required to manipulate linked list. Even iteration in for loop with 'downlevelIteration' flag in most environments works equal or faster. (see performance tests) |
+|  [head](./structures.doublylinkedlist.head.md) |  | ListItem | First item in a linked list, has no items after it (no prev) |
+|  [length](./structures.doublylinkedlist.length.md) |  | number | Get the amount of items in list |
+|  [tail](./structures.doublylinkedlist.tail.md) |  | ListItem | Last item in a linked list, has no items before it (no next) |
 
 ## Methods
 

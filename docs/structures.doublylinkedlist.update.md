@@ -16,9 +16,9 @@ update(newItem: ListItem): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  newItem | <code>ListItem</code> | Element to replace existing item in list |
+|  newItem | ListItem | Element to replace existing item in list |
 
 <b>Returns:</b>
 
-`this`
+this
 

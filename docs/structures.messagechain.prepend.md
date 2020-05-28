@@ -14,9 +14,9 @@ prepend(newItem: MessageChainElement<ChainId, ChainValue>): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  newItem | <code>MessageChainElement&lt;ChainId, ChainValue&gt;</code> |  |
+|  newItem | [MessageChainElement](./structures.messagechainelement.md)<!-- -->&lt;ChainId, ChainValue&gt; |  |
 
 <b>Returns:</b>
 
-`this`
+this
 

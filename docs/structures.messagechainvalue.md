@@ -16,7 +16,7 @@ export interface MessageChainValue<ChainId> extends LinkedListValue<ChainId>
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [created](./structures.messagechainvalue.created.md) | <code>number</code> | Timestamps to determine freshness of item<!-- -->Next item always created after previous one: prev &gt; current &lt; next &lt; next |
-|  [unSynced](./structures.messagechainvalue.unsynced.md) | <code>boolean</code> |  |
-|  [updated](./structures.messagechainvalue.updated.md) | <code>number</code> |  |
+|  [created](./structures.messagechainvalue.created.md) | number | Timestamps to determine freshness of item<!-- -->Next item always created after previous one: prev &gt; current &lt; next &lt; next |
+|  [unSynced](./structures.messagechainvalue.unsynced.md) | boolean |  |
+|  [updated](./structures.messagechainvalue.updated.md) | number |  |
 

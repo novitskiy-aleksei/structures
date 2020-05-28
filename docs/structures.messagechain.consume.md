@@ -18,12 +18,12 @@ consume(update: this, loadRequest?: ChainLoadRequest<ChainId>): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  update | <code>this</code> | Consumable chain which used to update current |
-|  loadRequest | <code>ChainLoadRequest&lt;ChainId&gt;</code> | If update was requested by ChainLoadRequest, then you can provide it to help recognize how to apply 'update' chain |
+|  update | this | Consumable chain which used to update current |
+|  loadRequest | [ChainLoadRequest](./structures.chainloadrequest.md)<!-- -->&lt;ChainId&gt; | If update was requested by ChainLoadRequest, then you can provide it to help recognize how to apply 'update' chain |
 
 <b>Returns:</b>
 
-`this`
+this
 
 ## Example
 

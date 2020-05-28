@@ -11,5 +11,5 @@ toArray(): IterableIterator<ListItem>;
 ```
 <b>Returns:</b>
 
-`IterableIterator<ListItem>`
+IterableIterator&lt;ListItem&gt;
 

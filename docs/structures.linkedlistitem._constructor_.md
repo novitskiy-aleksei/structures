@@ -16,7 +16,7 @@ constructor(value: ListValue, prev?: any, next?: any);
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  value | <code>ListValue</code> |  |
-|  prev | <code>any</code> |  |
-|  next | <code>any</code> |  |
+|  value | ListValue |  |
+|  prev | any |  |
+|  next | any |  |
 

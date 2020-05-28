@@ -16,9 +16,9 @@ remove(key: ListId): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  key | <code>ListId</code> | identifier for seeking deletion item |
+|  key | ListId | identifier for seeking deletion item |
 
 <b>Returns:</b>
 
-`this`
+this
 

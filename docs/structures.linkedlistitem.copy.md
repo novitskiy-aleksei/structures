@@ -13,5 +13,5 @@ copy(): this;
 ```
 <b>Returns:</b>
 
-`this`
+this
 

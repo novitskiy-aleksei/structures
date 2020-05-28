@@ -13,5 +13,5 @@ Iterator shorthand for iterating list object just like it is a native array
 ```
 <b>Returns:</b>
 
-`IterableIterator<ListItem>`
+IterableIterator&lt;ListItem&gt;
 

@@ -16,10 +16,10 @@ protected getAttachDirection(intersectionId: ChainId, update: this): LoadDirecti
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  intersectionId | <code>ChainId</code> | id of first intersection item between update and this |
-|  update | <code>this</code> | Chain provided to calculate right direction for possible upserting |
+|  intersectionId | ChainId | id of first intersection item between update and this |
+|  update | this | Chain provided to calculate right direction for possible upserting |
 
 <b>Returns:</b>
 
-`LoadDirection`
+[LoadDirection](./structures.loaddirection.md)
 

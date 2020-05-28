@@ -16,10 +16,10 @@ insertNextTo(position: ListId, newItem: ListItem): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  position | <code>ListId</code> | id of existing element next to which make insert |
-|  newItem | <code>ListItem</code> | inserted item |
+|  position | ListId | id of existing element next to which make insert |
+|  newItem | ListItem | inserted item |
 
 <b>Returns:</b>
 
-`this`
+this
 

@@ -14,10 +14,10 @@ insertNextTo(position: ChainId, newItem: MessageChainElement<ChainId, ChainValue
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  position | <code>ChainId</code> |  |
-|  newItem | <code>MessageChainElement&lt;ChainId, ChainValue&gt;</code> |  |
+|  position | ChainId |  |
+|  newItem | [MessageChainElement](./structures.messagechainelement.md)<!-- -->&lt;ChainId, ChainValue&gt; |  |
 
 <b>Returns:</b>
 
-`this`
+this
 

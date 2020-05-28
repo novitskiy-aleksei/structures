@@ -13,5 +13,5 @@ removeHead(): this;
 ```
 <b>Returns:</b>
 
-`this`
+this
 

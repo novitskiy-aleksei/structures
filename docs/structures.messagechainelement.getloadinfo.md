@@ -11,5 +11,5 @@ getLoadInfo(): Partial<ChainLoadRequest<ChainId>>;
 ```
 <b>Returns:</b>
 
-`Partial<ChainLoadRequest<ChainId>>`
+Partial&lt;[ChainLoadRequest](./structures.chainloadrequest.md)<!-- -->&lt;ChainId&gt;&gt;
 

@@ -16,10 +16,10 @@ protected upsert(update: this, loadRequest: ChainLoadRequest<ChainId>): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  update | <code>this</code> | Chain with updated information |
-|  loadRequest | <code>ChainLoadRequest&lt;ChainId&gt;</code> | Info how to attach provided chain |
+|  update | this | Chain with updated information |
+|  loadRequest | [ChainLoadRequest](./structures.chainloadrequest.md)<!-- -->&lt;ChainId&gt; | Info how to attach provided chain |
 
 <b>Returns:</b>
 
-`this`
+this
 

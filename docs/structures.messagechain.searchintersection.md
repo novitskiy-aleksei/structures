@@ -16,11 +16,11 @@ protected searchIntersection(update: this): MessageChainElement<ChainId, ChainVa
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  update | <code>this</code> | Chain provided to calculate intersection with |
+|  update | this | Chain provided to calculate intersection with |
 
 <b>Returns:</b>
 
-`MessageChainElement<ChainId, ChainValue> | null`
+[MessageChainElement](./structures.messagechainelement.md)<!-- -->&lt;ChainId, ChainValue&gt; \| null
 
 MessageChainElement - First element which exists in current chain and provided
 

@@ -16,9 +16,9 @@ setLimit(newLimit: number): this;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  newLimit | <code>number</code> | new maximum size of current chain |
+|  newLimit | number | new maximum size of current chain |
 
 <b>Returns:</b>
 
-`this`
+this
 

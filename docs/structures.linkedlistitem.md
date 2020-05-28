@@ -22,10 +22,10 @@ export declare abstract class LinkedListItem<ListId, ListValue extends LinkedLis
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [id](./structures.linkedlistitem.id.md) |  | <code>ListId</code> | Item identifier |
-|  [next](./structures.linkedlistitem.next.md) |  | <code>this &#124; null &#124; undefined</code> | Pointer to next list item<!-- -->null - no loaded next items undefined - this item is list last element, no loading required |
-|  [prev](./structures.linkedlistitem.prev.md) |  | <code>this &#124; null &#124; undefined</code> | Pointer to previous list item<!-- -->null - no loaded previous items undefined - this item is list starting element |
-|  [value](./structures.linkedlistitem.value.md) |  | <code>ListValue</code> | Original list item value which was wrapped |
+|  [id](./structures.linkedlistitem.id.md) |  | ListId | Item identifier |
+|  [next](./structures.linkedlistitem.next.md) |  | this \| null \| undefined | Pointer to next list item<!-- -->null - no loaded next items undefined - this item is list last element, no loading required |
+|  [prev](./structures.linkedlistitem.prev.md) |  | this \| null \| undefined | Pointer to previous list item<!-- -->null - no loaded previous items undefined - this item is list starting element |
+|  [value](./structures.linkedlistitem.value.md) |  | ListValue | Original list item value which was wrapped |
 
 ## Methods
 

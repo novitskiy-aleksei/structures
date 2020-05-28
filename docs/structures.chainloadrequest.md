@@ -16,7 +16,7 @@ export interface ChainLoadRequest<ChainId>
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [count](./structures.chainloadrequest.count.md) | <code>number</code> | Amount of items to load |
-|  [direction](./structures.chainloadrequest.direction.md) | <code>LoadDirection</code> | Direction for moving through chain - down to old elements or up to new |
-|  [from](./structures.chainloadrequest.from.md) | <code>ChainId</code> | Pointer item for retrieving or applying items. |
+|  [count](./structures.chainloadrequest.count.md) | number | Amount of items to load |
+|  [direction](./structures.chainloadrequest.direction.md) | [LoadDirection](./structures.loaddirection.md) | Direction for moving through chain - down to old elements or up to new |
+|  [from](./structures.chainloadrequest.from.md) | ChainId | Pointer item for retrieving or applying items. |
 

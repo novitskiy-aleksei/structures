@@ -14,9 +14,9 @@ getBy(key: ChainId): MessageChainElement<ChainId, ChainValue> | undefined;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  key | <code>ChainId</code> |  |
+|  key | ChainId |  |
 
 <b>Returns:</b>
 
-`MessageChainElement<ChainId, ChainValue> | undefined`
+[MessageChainElement](./structures.messagechainelement.md)<!-- -->&lt;ChainId, ChainValue&gt; \| undefined
 
