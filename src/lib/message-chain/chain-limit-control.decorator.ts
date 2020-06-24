@@ -1,5 +1,6 @@
 import { MessageChainElement } from './message-chain.element';
 
+/* eslint-disable */
 function controlLimitOverflow(newItem: MessageChainElement<any, any>): void { // eslint-disable-line @typescript-eslint/no-explicit-any
   if (!this.chainLimit || this.length <= this.chainLimit) {
     return;
@@ -55,3 +56,4 @@ export function ChainLimitControl(): MethodDecorator {
     return descriptor;
   };
 }
+/* eslint-enable */
